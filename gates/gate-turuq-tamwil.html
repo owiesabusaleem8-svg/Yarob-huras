@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>طرق التمويل — يعرب</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#7A1B24; --maroon-deep:#4E1015; --maroon-bright:#9C2530;
+    --maroon-line:#e6cdd0; --tint:#FCF3F3; --white:#ffffff;
+    --ink:#2b2220; --ink-soft:#8a7573;
+    --sand:#B0724A; --sand-deep:#7A4326;
+    --green:#5E7A6B;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Tajawal', sans-serif; color:var(--ink); background:var(--white); line-height:1.85; overflow-x:hidden;}
+  h1,h2,h3{font-family:'Aref Ruqaa', serif;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1060px; margin:0 auto; padding:0 28px;}
+
+  header{
+    position:sticky; top:0; z-index:200; background:rgba(255,255,255,0.92); backdrop-filter:blur(10px);
+    padding:15px 32px; border-bottom:1px solid var(--maroon-line);
+  }
+  .breadcrumb{font-size:0.85rem; color:var(--ink-soft);}
+  .breadcrumb a{color:var(--maroon); font-weight:700;}
+  .breadcrumb .sep{margin:0 8px; opacity:0.5;}
+
+  /* hero */
+  .hero{ padding:80px 0 60px; text-align:center; background:var(--tint); border-bottom:1px solid var(--maroon-line); }
+  .hero .kicker{ color:var(--maroon); letter-spacing:3px; font-size:0.78rem; font-weight:700; margin-bottom:16px; }
+  .hero h1{ font-size:2.7rem; color:var(--maroon-deep); margin-bottom:16px; line-height:1.35; }
+  .hero p{ color:var(--ink-soft); max-width:600px; margin:0 auto; font-size:1rem; }
+
+  .section{ padding:76px 0; }
+  .section.alt{ background:var(--tint); }
+  .section h2{ font-size:1.85rem; color:var(--maroon-deep); margin-bottom:12px; }
+  .section .lede{ color:var(--ink-soft); font-size:0.95rem; margin-bottom:44px; max-width:640px; }
+
+  /* sources: bordered list, no cards */
+  .src-list{ border-top:1px solid var(--maroon-line); }
+  .src-item{ display:flex; gap:20px; align-items:flex-start; padding:22px 4px; border-bottom:1px solid var(--maroon-line); }
+  .src-mark{ flex-shrink:0; width:12px; height:12px; background:var(--maroon); transform:rotate(45deg); border-radius:2px; margin-top:12px; }
+  .src-body h3{ font-family:'Tajawal',sans-serif; font-weight:700; font-size:1rem; color:var(--maroon-deep); margin-bottom:3px; }
+  .src-body p{ font-size:0.9rem; color:var(--ink-soft); }
+
+  /* pledge panel */
+  .pledge{ background:linear-gradient(155deg,#9C2530 0%,#4E1015 100%); color:#fff; border-radius:22px; padding:44px 40px; }
+  .pledge h2{ color:#fff; margin-bottom:10px; }
+  .pledge > p{ color:rgba(255,255,255,0.72); margin-bottom:30px; font-size:0.95rem; }
+  .pledge-row{ display:flex; gap:16px; align-items:flex-start; padding:16px 0; border-top:1px solid rgba(255,255,255,0.14); }
+  .pledge-row:first-of-type{ border-top:none; }
+  .pledge-check{ flex-shrink:0; width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,0.16); display:flex; align-items:center; justify-content:center; margin-top:3px; }
+  .pledge-check svg{ width:14px; height:14px; color:#fff; }
+  .pledge-row p{ font-size:0.93rem; color:rgba(255,255,255,0.94); }
+
+  /* support ladder */
+  .ladder{ position:relative; padding-right:34px; }
+  .ladder::before{ content:''; position:absolute; top:10px; bottom:10px; right:11px; width:2px; background:linear-gradient(var(--maroon), var(--sand)); }
+  .rung{ position:relative; padding:0 0 34px 0; }
+  .rung:last-child{ padding-bottom:0; }
+  .rung::before{
+    content:''; position:absolute; right:-29px; top:6px; width:16px; height:16px;
+    background:var(--white); border:3px solid var(--maroon); border-radius:50%;
+  }
+  .rung h3{ font-family:'Tajawal',sans-serif; font-weight:700; font-size:1.02rem; color:var(--maroon-deep); margin-bottom:5px; }
+  .rung p{ font-size:0.9rem; color:var(--ink-soft); }
+  .rung .amount{ display:inline-block; margin-top:8px; padding:5px 14px; border-radius:999px; background:var(--tint); border:1px solid var(--maroon-line); color:var(--maroon); font-weight:700; font-size:0.82rem; }
+  .rung.gold::before{ border-color:var(--sand); }
+  .rung.gold .amount{ background:#faf1e9; border-color:#e6cdb8; color:var(--sand-deep); }
+
+  /* zakat split */
+  .zakat-intro{ background:var(--white); border:1px solid var(--maroon-line); border-right:5px solid var(--maroon); border-radius:14px; padding:22px 24px; margin-bottom:34px; }
+  .zakat-intro p{ font-size:0.93rem; color:var(--ink); }
+  .zakat-cols{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  @media(max-width:760px){ .zakat-cols{ grid-template-columns:1fr; } }
+  .zcol h3{ font-family:'Tajawal',sans-serif; font-weight:700; font-size:1rem; margin-bottom:16px; display:flex; align-items:center; gap:9px; }
+  .zcol.yes h3{ color:var(--maroon-deep); }
+  .zcol.no h3{ color:var(--ink-soft); }
+  .zbadge{ width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+  .zcol.yes .zbadge{ background:var(--maroon); color:#fff; }
+  .zcol.no .zbadge{ background:#ded4d3; color:#6d5c5a; }
+  .zbadge svg{ width:12px; height:12px; }
+  .zitem{ padding:16px 18px; border-radius:12px; margin-bottom:12px; }
+  .zcol.yes .zitem{ background:var(--white); border:1px solid var(--maroon-line); }
+  .zcol.no .zitem{ background:#f6f2f1; border:1px solid #e7dedd; }
+  .zitem strong{ display:block; font-size:0.94rem; color:var(--maroon-deep); margin-bottom:4px; }
+  .zcol.no .zitem strong{ color:#6d5c5a; }
+  .zitem span{ font-size:0.86rem; color:var(--ink-soft); }
+  .zcol.no .zlist{ display:flex; flex-wrap:wrap; gap:9px; }
+  .zcol.no .zchip{ padding:9px 16px; border-radius:999px; background:#f6f2f1; border:1px solid #e7dedd; font-size:0.86rem; color:#6d5c5a; }
+
+  .cta{ text-align:center; padding:64px 28px; background:var(--tint); border-top:1px solid var(--maroon-line); }
+  .cta h2{ font-size:1.6rem; color:var(--maroon-deep); margin-bottom:10px; }
+  .cta p{ color:var(--ink-soft); margin-bottom:24px; font-size:0.95rem; }
+  .cta-btn{ display:inline-block; padding:14px 34px; border-radius:999px; background:var(--maroon); color:#fff; font-weight:700; font-size:0.92rem; transition:background .25s ease; }
+  .cta-btn:hover{ background:var(--maroon-deep); }
+
+  footer{ text-align:center; padding:34px 28px; color:var(--ink-soft); font-size:0.82rem; border-top:1px solid var(--maroon-line); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="breadcrumb">
+    <a href="../yarob-concept.html">الرئيسية</a>
+    <span class="sep">/</span>
+    <span>طرق التمويل</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">جمعية يعرب التنموية الخيرية</div>
+    <h1>من أين تأتي الموارد، وكيف يمكنك أن تكون جزءاً منها</h1>
+    <p>مصادر تمويل يعرب، وما تقدّمه على نفقتها، وأبواب المساهمة المتاحة أمامك — بما فيها زكاة الأموال.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>مصادر التمويل</h2>
+    <p class="lede">تعتمد يعرب على تعدد مصادر التمويل وتنوّعها بدل الاعتماد على مصدر واحد.</p>
+    <div class="src-list">
+      <div class="src-item"><div class="src-mark"></div><div class="src-body"><h3>اشتراكات الأعضاء</h3><p>يلتزم كل عضو في يعرب بمبلغ سنوي قيمته 30 د.أ.</p></div></div>
+      <div class="src-item"><div class="src-mark"></div><div class="src-body"><h3>برنامج أصدقاء يعرب</h3><p>يلتزم من يرغب من أصدقاء العمل الخيري والتطوعي بمبلغ يراه مناسباً يُدفع بشكل شهري.</p></div></div>
+      <div class="src-item"><div class="src-mark"></div><div class="src-body"><h3>التبرعات العامة</h3><p>تعتمد يعرب على التبرعات من الأشخاص والشركات الراغبة في الدعم.</p></div></div>
+      <div class="src-item"><div class="src-mark"></div><div class="src-body"><h3>حملات جمع التبرعات</h3><p>تقيم يعرب حفلات أو فعاليات تهدف لجمع التبرعات.</p></div></div>
+      <div class="src-item"><div class="src-mark"></div><div class="src-body"><h3>المنح المالية</h3><p>المقدمة من مؤسسات وطنية أو دولية.</p></div></div>
+      <div class="src-item"><div class="src-mark"></div><div class="src-body"><h3>عوائد الاستثمارات</h3><p>مثل مطبخ يعرب الإنتاجي.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="pledge">
+      <h2>ماذا تقدم يعرب على نفقتها؟</h2>
+      <p>ثلاثة التزامات ثابتة تحكم طريقة إنفاق يعرب لمواردها.</p>
+      <div class="pledge-row">
+        <div class="pledge-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p>كل الخدمات التي تقدمها يعرب مجاناً بدون أي مقابل.</p>
+      </div>
+      <div class="pledge-row">
+        <div class="pledge-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p>الجهود التقنية كالتدريبات والإرشاد الاجتماعي والنفسي وعمليات التيسير والتدريس تقدم كاملة من جهود المتطوعين والمتطوعات بدون أي مقابل مادي.</p>
+      </div>
+      <div class="pledge-row">
+        <div class="pledge-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p>المصاريف الإدارية والعمومية تأتي من اشتراكات الأعضاء.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>كيف يمكنك أن تدعمنا؟</h2>
+    <p class="lede">بالإمكان توفير الدعم المادي بأشكاله النقدية والعينية حسب الموازنة العامة للدورة البرامجية لكل عام، ويُفسَّر كل محور بشكل مستقل (موازنة المساعدات وموازنة برامج التعليم المجتمعي).</p>
+    <div class="ladder">
+      <div class="rung">
+        <h3>وجبات الإفطار المركزي الرمضاني</h3>
+        <p>المساهمة في توفير وجبات الطعام والشراب للإفطار المركزي الرمضاني السنوي.</p>
+      </div>
+      <div class="rung">
+        <h3>التبرعات العينية</h3>
+        <p>المساهمة في التبرعات العينية المنبثقة من الموازنة مثل الوجبات الخفيفة والسكاكر والقرطاسية.</p>
+      </div>
+      <div class="rung">
+        <h3>مساهمة شهرية</h3>
+        <p>بإمكانك تحويله مباشرة لحسابنا البنكي أو التواصل مع الإدارة لاستلامه حسب الأصول.</p>
+        <span class="amount">50 – 100 دينار شهرياً</span>
+      </div>
+      <div class="rung gold">
+        <h3>برنامج الأعضاء الفخريين</h3>
+        <p>الاشتراك لتصبح راعياً ذهبياً ليعرب.</p>
+        <span class="amount">1500 دينار سنوياً</span>
+      </div>
+      <div class="rung">
+        <h3>تخصيص تبرعك لبند بعينه</h3>
+        <p>بإمكانك أن تشترط تخصيص المبلغ لبرامج التعليم المجتمعي، أو للمساعدات، بل ويمكنك أن تخصص تبرعك للكفالات فقط على سبيل المثال، أو لقرطاسية أنشطة التعليم المجتمعي مثلاً — حسب بنود الإنفاق الموضحة في الموازنات المالية المرفقة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <h2>كيف تدير يعرب زكاة الأموال؟</h2>
+    <p class="lede">توضيح لأبواب الزكاة الثمانية، وأيّها يقع ضمن اختصاص يعرب.</p>
+    <div class="zakat-intro">
+      <p>بإمكان يعرب استقبال زكاة الأموال وتخصيصها حسب الشريعة الإسلامية لأبوابها الآتية، وبما يقترن بطبيعة اختصاص يعرب.</p>
+    </div>
+    <div class="zakat-cols">
+      <div class="zcol yes">
+        <h3><span class="zbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>أبواب تُنفق من خلال يعرب</h3>
+        <div class="zitem"><strong>الفقراء</strong><span>توزيعها لمرة واحدة أو بشكل شهري، وتُنفق على ما يحتاجه الفقير مثل نفقات دراسة أو نفقات طعام وشراب وغيرها، وباستطاعة المتبرع أن يحدد ما يرغب به لتوجيه التبرع.</span></div>
+        <div class="zitem"><strong>المساكين</strong><span>توزيعها لمرة واحدة أو بشكل شهري، وتُنفق على ما يحتاجه المسكين مثل نفقات دراسة أو نفقات طعام وشراب وغيرها، وباستطاعة المتبرع أن يحدد ما يرغب به لتوجيه التبرع.</span></div>
+        <div class="zitem"><strong>الغارمون</strong><span>تقع ضمن اختصاص يعرب، وتُدفع للغارمين في أي مجال هو غارم به كتسديد الديون وغيره.</span></div>
+      </div>
+      <div class="zcol no">
+        <h3><span class="zbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>أبواب لا تُنفق من خلال يعرب</h3>
+        <div class="zlist">
+          <span class="zchip">العاملون على الزكاة</span>
+          <span class="zchip">المؤلفة قلوبهم</span>
+          <span class="zchip">في الرقاب</span>
+          <span class="zchip">في سبيل الله</span>
+          <span class="zchip">ابن السبيل</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <h2>جاهز تساهم؟</h2>
+  <p>تواصل مع إدارة يعرب لترتيب طريقة الدعم التي تناسبك.</p>
+  <a class="cta-btn" href="https://wa.me/962786279366" target="_blank" rel="noopener">تواصل عبر واتساب</a>
+</div>
+
+<footer>جمعية يعرب للتنموية الخيرية — طرق التمويل</footer>
+
+</body>
+</html>
