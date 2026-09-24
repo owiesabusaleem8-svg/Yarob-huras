@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الهيكلية الإدارية — يعرب</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Tajawal',sans-serif;background:#f9f0f1;min-height:100vh;}
+a{color:inherit;text-decoration:none;}
+header{position:sticky;top:0;z-index:300;background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);padding:12px 24px;border-bottom:1px solid #e6cdd0;}
+.bc{font-size:.82rem;color:#8a7573;}
+.bc a{color:#7A1B24;font-weight:700;}
+.bc .sep{margin:0 6px;opacity:.4;}
+.hero{padding:28px 24px 16px;text-align:center;background:#FCF3F3;border-bottom:1px solid #e6cdd0;}
+.hero .kicker{color:#7A1B24;letter-spacing:3px;font-size:.72rem;font-weight:700;margin-bottom:6px;}
+.hero h1{font-size:1.7rem;font-weight:700;color:#4E1015;margin-bottom:4px;}
+.hero p{color:#8a7573;font-size:.82rem;}
+.hint{text-align:center;padding:10px 16px;color:#8a7573;font-size:.8rem;}
+.scroll-wrap{overflow-x:auto;padding:20px 8px 80px;-webkit-overflow-scrolling:touch;}
+footer{text-align:center;padding:22px;color:#8a7573;font-size:.76rem;border-top:1px solid #e6cdd0;margin-top:10px;}
+
+/* draw animation */
+@keyframes drawRect{
+  from{stroke-dashoffset:var(--perimeter,900);}
+  to{stroke-dashoffset:0;}
+}
+@keyframes fillIn{
+  from{fill-opacity:0;}
+  to{fill-opacity:1;}
+}
+
+.node-shape{
+  stroke-dasharray:var(--perimeter,900);
+  stroke-dashoffset:var(--perimeter,900);
+  fill-opacity:0;
+  animation:
+    drawRect .5s cubic-bezier(.4,0,.2,1) forwards,
+    fillIn .3s ease .45s forwards;
+}
+
+/* connector lines draw */
+@keyframes drawLine{
+  from{stroke-dashoffset:400;}
+  to{stroke-dashoffset:0;}
+}
+.conn{
+  stroke:#bbb;stroke-width:1.8;fill:none;
+  stroke-dasharray:400;
+  stroke-dashoffset:400;
+  animation:drawLine .4s ease forwards;
+}
+
+/* typewriter text — hidden then typed by JS */
+.nd-text{opacity:0;}
+.nd-text.typed{opacity:1;}
+
+.node-g{cursor:pointer;}
+.node-g:hover .node-shape{filter:brightness(1.1);}
+
+.hidden{display:none;}
+svg text{font-family:'Tajawal',sans-serif;text-anchor:middle;dominant-baseline:middle;}
+</style>
+</head>
+<body>
+<header>
+  <div class="bc">
+    <a href="../yarob-concept.html">الرئيسية</a><span class="sep">/</span>
+    <a href="gate-08.html">القدرات المؤسسية</a><span class="sep">/</span>
+    <a href="gate-haykaliyat.html">الهيكليات</a><span class="sep">/</span>
+    <span>الهيكلية الإدارية</span>
+  </div>
+</header>
+<section class="hero">
+  <div class="kicker">القدرات المؤسسية</div>
+  <h1>الهيكلية الإدارية</h1>
+  <p>اضغط على أي عقدة لفتح ما تحتها</p>
+</section>
+<div class="hint">▼ ابدأ بالضغط على <strong>الهيئة العامة</strong></div>
+<div class="scroll-wrap">
+<svg id="chart" width="100%" viewBox="0 0 1100 1600"
+     xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto;">
+<defs>
+  <filter id="sh" x="-15%" y="-15%" width="130%" height="130%">
+    <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#00000040"/>
+  </filter>
+</defs>
+<style>
+  .tw{fill:#fff;font-weight:700;font-size:13px;}
+  .td{fill:#2b2220;font-weight:700;font-size:13px;}
+  .f10{font-size:10px;}
+  .f11{font-size:11px;}
+  .f12{font-size:12px;}
+  .f14{font-size:14px;}
+  .f16{font-size:16px;}
+</style>
+
+<!-- ══ ROOT: الهيئة العامة (diamond) ══ -->
+<!-- always visible, no animation needed -->
+<g class="node-g" onclick="revealLevel(1)" filter="url(#sh)">
+  <!-- diamond = rotated rect -->
+  <rect x="461" y="26" width="128" height="128" rx="10"
+        fill="#222" stroke="#555" stroke-width="2"
+        transform="rotate(45 525 90)"/>
+  <text x="525" y="82" fill="#fff" font-weight="700" font-size="14px">الهيئة</text>
+  <text x="525" y="100" fill="#fff" font-weight="700" font-size="14px">العامة</text>
+  <text x="525" y="118" fill="#aaa" font-size="10px">اضغط ▼</text>
+</g>
+
+<!-- ══ LEVEL 1 ══ -->
+<g id="lv1" class="hidden">
+
+  <!-- connectors -->
+  <line x1="525" y1="178" x2="525" y2="210" class="conn" style="--d:.0s"/>
+  <line x1="100" y1="210" x2="950" y2="210" class="conn" style="animation-delay:.4s;stroke-dasharray:860;stroke-dashoffset:860"/>
+
+  <!-- توأمة الحراس — RIGHT of هيئة عامة, same level (diamond, cream) -->
+  <line x1="820" y1="90" x2="870" y2="90" class="conn" style="animation-delay:.5s"/>
+  <!-- horizontal arrow from root right to توأمة -->
+  <line x1="591" y1="90" x2="830" y2="90" class="conn" style="animation-delay:.45s;stroke-dasharray:250;stroke-dashoffset:250"/>
+  <g class="node-g" filter="url(#sh)" id="n-huras">
+    <rect x="820" y="42" width="102" height="102" rx="8"
+          fill="#FCEFB4" stroke="#D4B800" stroke-width="2"
+          class="node-shape" style="--perimeter:420;"
+          transform="rotate(45 871 93)"/>
+    <text x="871" y="85" class="td f12 nd-text" data-text="توأمة الحراس" data-lines="توأمة|الحراس">توأمة</text>
+    <text x="871" y="101" class="td f12 nd-text" data-ref="n-huras-2">الحراس</text>
+  </g>
+
+  <!-- المجموعة الكشفية — LEFT of هيئة عامة, same level (diamond, cream) -->
+  <line x1="459" y1="90" x2="240" y2="90" class="conn" style="animation-delay:.45s;stroke-dasharray:230;stroke-dashoffset:230"/>
+  <g class="node-g" filter="url(#sh)" id="n-kash">
+    <rect x="136" y="42" width="102" height="102" rx="8"
+          fill="#FCEFB4" stroke="#D4B800" stroke-width="2"
+          class="node-shape" style="--perimeter:420;animation-delay:.6s"
+          transform="rotate(45 187 93)"/>
+    <text x="187" y="85" class="td f11 nd-text" style="animation-delay:.8s">المجموعة</text>
+    <text x="187" y="101" class="td f11 nd-text" style="animation-delay:.8s">الكشفية</text>
+  </g>
+
+  <!-- مدقق الحسابات — small dark diamond, hangs from H-bar left -->
+  <line x1="310" y1="210" x2="310" y2="232" class="conn" style="animation-delay:.5s"/>
+  <g filter="url(#sh)" id="n-mudaqiq">
+    <rect x="270" y="232" width="80" height="80" rx="6"
+          fill="#222" stroke="#555" stroke-width="1.5"
+          class="node-shape" style="--perimeter:330;animation-delay:.55s"
+          transform="rotate(45 310 272)"/>
+    <text x="310" y="264" class="tw f10 nd-text" style="animation-delay:.75s">مدقق</text>
+    <text x="310" y="277" class="tw f10 nd-text" style="animation-delay:.75s">الحسابات</text>
+    <text x="310" y="290" class="tw f10 nd-text" style="animation-delay:.75s">الخارجي</text>
+  </g>
+
+  <!-- اللجنة الاستشارية — small dark diamond -->
+  <line x1="130" y1="210" x2="130" y2="232" class="conn" style="animation-delay:.52s"/>
+  <g filter="url(#sh)" id="n-lajna">
+    <rect x="92" y="232" width="76" height="76" rx="6"
+          fill="#222" stroke="#555" stroke-width="1.5"
+          class="node-shape" style="--perimeter:314;animation-delay:.6s"
+          transform="rotate(45 130 270)"/>
+    <text x="130" y="264" class="tw f10 nd-text" style="animation-delay:.78s">اللجنة</text>
+    <text x="130" y="278" class="tw f10 nd-text" style="animation-delay:.78s">الاستشارية</text>
+  </g>
+
+  <!-- vertical to الهيئة الإدارية -->
+  <line x1="525" y1="210" x2="525" y2="340" class="conn" style="animation-delay:.42s;stroke-dasharray:130;stroke-dashoffset:130"/>
+
+  <!-- مطبخ يعرب — cream rect left of هيئة إدارية -->
+  <line x1="360" y1="365" x2="430" y2="365" class="conn" style="animation-delay:.65s;stroke-dasharray:80;stroke-dashoffset:80"/>
+  <g filter="url(#sh)" id="n-matbakh">
+    <rect x="280" y="340" width="146" height="52" rx="10"
+          fill="#FCEFB4" stroke="#D4B800" stroke-width="1.5"
+          class="node-shape" style="--perimeter:400;animation-delay:.68s"/>
+    <text x="353" y="366" class="td f12 nd-text" style="animation-delay:.9s">مطبخ يعرب</text>
+  </g>
+
+  <!-- المدير القانوني — dark diamond right of هيئة إدارية -->
+  <line x1="620" y1="365" x2="670" y2="365" class="conn" style="animation-delay:.65s;stroke-dasharray:60;stroke-dashoffset:60"/>
+  <g filter="url(#sh)" id="n-qanuni">
+    <rect x="628" y="325" width="82" height="82" rx="6"
+          fill="#222" stroke="#555" stroke-width="1.5"
+          class="node-shape" style="--perimeter:330;animation-delay:.7s"
+          transform="rotate(45 669 366)"/>
+    <text x="669" y="358" class="tw f10 nd-text" style="animation-delay:.92s">المدير</text>
+    <text x="669" y="373" class="tw f10 nd-text" style="animation-delay:.92s">القانوني</text>
+  </g>
+
+  <!-- الهيئة الإدارية — dark diamond center -->
+  <g class="node-g" onclick="revealLevel(2)" filter="url(#sh)" id="n-hia">
+    <rect x="481" y="316" width="88" height="88" rx="8"
+          fill="#222" stroke="#555" stroke-width="2"
+          class="node-shape" style="--perimeter:360;animation-delay:.44s"
+          transform="rotate(45 525 360)"/>
+    <text x="525" y="352" class="tw f11 nd-text" style="animation-delay:.65s">الهيئة</text>
+    <text x="525" y="367" class="tw f11 nd-text" style="animation-delay:.65s">الإدارية</text>
+    <text x="525" y="382" class="tw nd-text" style="font-size:9px;animation-delay:.65s">▼</text>
+  </g>
+</g><!-- /lv1 -->
+
+<!-- ══ LEVEL 2 ══ -->
+<g id="lv2" class="hidden">
+  <line x1="525" y1="404" x2="525" y2="446" class="conn" style="--d:0s;stroke-dasharray:44;stroke-dashoffset:44"/>
+  <g class="node-g" onclick="revealLevel(3)" filter="url(#sh)" id="n-rais">
+    <rect x="386" y="446" width="278" height="60" rx="14"
+          fill="#F7CE2E" stroke="#C8A800" stroke-width="2"
+          class="node-shape" style="--perimeter:680;"/>
+    <text x="525" y="477" class="td f16 nd-text" style="animation-delay:.22s">الرئيس ▼</text>
+  </g>
+</g><!-- /lv2 -->
+
+<!-- ══ LEVEL 3 ══ -->
+<g id="lv3" class="hidden">
+  <line x1="525" y1="506" x2="525" y2="536" class="conn" style="stroke-dasharray:36;stroke-dashoffset:36"/>
+  <line x1="80" y1="536" x2="970" y2="536" class="conn" style="animation-delay:.35s;stroke-dasharray:900;stroke-dashoffset:900"/>
+
+  <!-- نائب الرئيس -->
+  <line x1="940" y1="536" x2="940" y2="556" class="conn" style="animation-delay:.4s;stroke-dasharray:22;stroke-dashoffset:22"/>
+  <g filter="url(#sh)">
+    <rect x="860" y="556" width="160" height="54" rx="12"
+          fill="#F7CE2E" stroke="#C8A800" stroke-width="1.5"
+          class="node-shape" style="--perimeter:440;animation-delay:.42s"/>
+    <text x="940" y="583" class="td f13 nd-text" style="animation-delay:.62s">نائب الرئيس</text>
+  </g>
+
+  <!-- أمين السر -->
+  <line x1="760" y1="536" x2="760" y2="556" class="conn" style="animation-delay:.44s;stroke-dasharray:22;stroke-dashoffset:22"/>
+  <g filter="url(#sh)">
+    <rect x="682" y="556" width="156" height="54" rx="12"
+          fill="#F7CE2E" stroke="#C8A800" stroke-width="1.5"
+          class="node-shape" style="--perimeter:430;animation-delay:.46s"/>
+    <text x="760" y="583" class="td f13 nd-text" style="animation-delay:.66s">أمين السر</text>
+  </g>
+
+  <!-- مسؤول التواصل -->
+  <line x1="575" y1="536" x2="575" y2="556" class="conn" style="animation-delay:.48s;stroke-dasharray:22;stroke-dashoffset:22"/>
+  <g filter="url(#sh)">
+    <rect x="480" y="556" width="190" height="54" rx="12"
+          fill="#F7CE2E" stroke="#C8A800" stroke-width="1.5"
+          class="node-shape" style="--perimeter:490;animation-delay:.5s"/>
+    <text x="575" y="583" class="td f13 nd-text" style="animation-delay:.7s">مسؤول التواصل</text>
+  </g>
+
+  <!-- مسؤول المنح / الحماية -->
+  <line x1="360" y1="536" x2="360" y2="556" class="conn" style="animation-delay:.52s;stroke-dasharray:22;stroke-dashoffset:22"/>
+  <g filter="url(#sh)">
+    <rect x="258" y="556" width="204" height="54" rx="12"
+          fill="#F7CE2E" stroke="#C8A800" stroke-width="1.5"
+          class="node-shape" style="--perimeter:520;animation-delay:.54s"/>
+    <text x="360" y="574" class="td f11 nd-text" style="animation-delay:.74s">مسؤول المنح</text>
+    <text x="360" y="591" class="td f11 nd-text" style="animation-delay:.74s">مسؤول الحماية</text>
+  </g>
+
+  <!-- أمين الصندوق -->
+  <line x1="110" y1="536" x2="110" y2="556" class="conn" style="animation-delay:.56s;stroke-dasharray:22;stroke-dashoffset:22"/>
+  <g filter="url(#sh)">
+    <rect x="30" y="556" width="160" height="54" rx="12"
+          fill="#F7CE2E" stroke="#C8A800" stroke-width="1.5"
+          class="node-shape" style="--perimeter:440;animation-delay:.58s"/>
+    <text x="110" y="583" class="td f13 nd-text" style="animation-delay:.78s">أمين الصندوق</text>
+  </g>
+
+  <!-- V to مدير العمليات -->
+  <line x1="525" y1="610" x2="525" y2="648" class="conn" style="animation-delay:.6s;stroke-dasharray:40;stroke-dashoffset:40"/>
+  <g class="node-g" onclick="revealLevel(4)" filter="url(#sh)" id="n-ops">
+    <rect x="375" y="648" width="300" height="58" rx="14"
+          fill="#F7CE2E" stroke="#C8A800" stroke-width="2"
+          class="node-shape" style="--perimeter:720;animation-delay:.62s"/>
+    <text x="525" y="677" class="td f14 nd-text" style="animation-delay:.82s">مدير العمليات ▼</text>
+  </g>
+</g><!-- /lv3 -->
+
+<!-- ══ LEVEL 4 ══ -->
+<g id="lv4" class="hidden">
+  <line x1="525" y1="706" x2="525" y2="738" class="conn" style="stroke-dasharray:34;stroke-dashoffset:34"/>
+  <line x1="190" y1="738" x2="525" y2="738" class="conn" style="animation-delay:.33s;stroke-dasharray:340;stroke-dashoffset:340"/>
+
+  <!-- فريق العمليات -->
+  <line x1="190" y1="738" x2="190" y2="758" class="conn" style="animation-delay:.38s;stroke-dasharray:22;stroke-dashoffset:22"/>
+  <g filter="url(#sh)">
+    <rect x="80" y="758" width="220" height="58" rx="14"
+          fill="#F5901F" stroke="#B06000" stroke-width="1.5"
+          class="node-shape" style="--perimeter:560;animation-delay:.4s"/>
+    <text x="190" y="787" fill="#fff" font-weight="700" font-size="14px" class="nd-text" style="animation-delay:.6s">فريق العمليات</text>
+  </g>
+
+  <!-- V to الفريق المركزي -->
+  <line x1="525" y1="738" x2="525" y2="758" class="conn" style="animation-delay:.36s;stroke-dasharray:22;stroke-dashoffset:22"/>
+  <g class="node-g" onclick="revealLevel(5)" filter="url(#sh)" id="n-cent">
+    <rect x="358" y="758" width="334" height="58" rx="14"
+          fill="#F6C9C4" stroke="#C09090" stroke-width="2"
+          class="node-shape" style="--perimeter:790;animation-delay:.38s"/>
+    <text x="525" y="787" class="td f14 nd-text" style="animation-delay:.58s">الفريق المركزي ▼</text>
+  </g>
+</g><!-- /lv4 -->
+
+<!-- ══ LEVEL 5 ══ -->
+<g id="lv5" class="hidden">
+  <line x1="525" y1="816" x2="525" y2="850" class="conn" style="stroke-dasharray:36;stroke-dashoffset:36"/>
+  <line x1="55" y1="850" x2="995" y2="850" class="conn" style="animation-delay:.34s;stroke-dasharray:950;stroke-dashoffset:950"/>
+
+  <!-- متابعة شؤون المتطوعين -->
+  <line x1="965" y1="850" x2="965" y2="870" class="conn" style="animation-delay:.4s;stroke-dasharray:22;stroke-dashoffset:22"/>
+  <g filter="url(#sh)">
+    <rect x="876" y="870" width="178" height="56" rx="12"
+          fill="#EE3B33" stroke="#A01010" stroke-width="1.5"
+          class="node-shape" style="--perimeter:470;animation-delay:.42s"/>
+    <text x="965" y="889" fill="#fff" font-weight="700" font-size="11px" class="nd-text" style="animation-delay:.62s">متابعة شؤون</text>
+    <text x="965" y="906" fill="#fff" font-weight="700" font-size="11px" class="nd-text" style="animation-delay:.62s">المتطوعين</text>
+  </g>
+
+  <!-- م. المحتويات والمتابعة -->
+  <line x1="790" y1="850" x2="790" y2="870" class="conn" style="animation-delay:.44s;stroke-dasharray:22;stroke-dashoffset:22"/>
+  <g filter="url(#sh)">
+    <rect x="696" y="870" width="188" height="56" rx="12"
+          fill="#EE3B33" stroke="#A01010" stroke-width="1.5"
+          class="node-shape" style="--perimeter:490;animation-delay:.46s"/>
+    <text x="790" y="887" fill="#fff" font-weight="700" font-size="10px" class="nd-text" style="animation-delay:.66s">م. المحتويات</text>
+    <text x="790" y="903" fill="#fff" font-weight="700" font-size="10px" class="nd-text" style="animation-delay:.66s">والمتابعة والتقييم</text>
+  </g>
+
+  <!-- مدير أنشطة مخيم غزة -->
+  <line x1="614" y1="850" x2="614" y2="870" class="conn" style="animation-delay:.48s;stroke-dasharray:22;stroke-dashoffset:22"/>
+  <g class="node-g" onclick="toggleSub('s-ghaza')" filter="url(#sh)">
+    <rect x="526" y="870" width="176" height="60" rx="12"
+          fill="#EE3B33" stroke="#A01010" stroke-width="1.5"
+          class="node-shape" style="--perimeter:476;animation-delay:.5s"/>
+    <text x="614" y="889" fill="#fff" font-weight="700" font-size="11px" class="nd-text" style="animation-delay:.7s">مدير أنشطة</text>
+    <text x="614" y="906" fill="#fff" font-weight="700" font-size="11px" class="nd-text" style="animation-delay:.7s">مخيم غزة ▼</text>
+  </g>
+  <g id="s-ghaza" class="hidden">
+    <line x1="614" y1="930" x2="614" y2="950" class="conn" style="stroke-dasharray:22;stroke-dashoffset:22"/>
+    <g filter="url(#sh)">
+      <rect x="526" y="950" width="176" height="48" rx="10"
+            fill="#F6C9C4" stroke="#C09090" stroke-width="1.5"
+            class="node-shape" style="--perimeter:450;"/>
+      <text x="614" y="974" class="td f11 nd-text" style="animation-delay:.2s">مجلس قيادة المنطقة</text>
+    </g>
+    <line x1="614" y1="998" x2="614" y2="1018" class="conn" style="animation-delay:.22s;stroke-dasharray:22;stroke-dashoffset:22"/>
+    <g filter="url(#sh)">
+      <rect x="526" y="1018" width="176" height="56" rx="10"
+            fill="#F6C9C4" stroke="#C09090" stroke-width="1.5"
+            class="node-shape" style="--perimeter:470;animation-delay:.24s"/>
+      <text x="614" y="1038" class="td f10 nd-text" style="animation-delay:.44s">المرشدون</text>
+      <text x="614" y="1054" class="td f10 nd-text" style="animation-delay:.44s">المشروفون/المساندون</text>
+    </g>
+  </g>
+
+  <!-- مدير أنشطة مخيم النصر -->
+  <line x1="440" y1="850" x2="440" y2="870" class="conn" style="animation-delay:.52s;stroke-dasharray:22;stroke-dashoffset:22"/>
+  <g class="node-g" onclick="toggleSub('s-nasr')" filter="url(#sh)">
+    <rect x="352" y="870" width="176" height="60" rx="12"
+          fill="#EE3B33" stroke="#A01010" stroke-width="1.5"
+          class="node-shape" style="--perimeter:476;animation-delay:.54s"/>
+    <text x="440" y="889" fill="#fff" font-weight="700" font-size="11px" class="nd-text" style="animation-delay:.74s">مدير أنشطة</text>
+    <text x="440" y="906" fill="#fff" font-weight="700" font-size="11px" class="nd-text" style="animation-delay:.74s">مخيم النصر ▼</text>
+  </g>
+  <g id="s-nasr" class="hidden">
+    <line x1="440" y1="930" x2="440" y2="950" class="conn" style="stroke-dasharray:22;stroke-dashoffset:22"/>
+    <g filter="url(#sh)">
+      <rect x="352" y="950" width="176" height="48" rx="10"
+            fill="#F6C9C4" stroke="#C09090" stroke-width="1.5"
+            class="node-shape" style="--perimeter:450;"/>
+      <text x="440" y="974" class="td f11 nd-text" style="animation-delay:.2s">مجلس قيادة المنطقة</text>
+    </g>
+    <line x1="440" y1="998" x2="440" y2="1018" class="conn" style="animation-delay:.22s;stroke-dasharray:22;stroke-dashoffset:22"/>
+    <g filter="url(#sh)">
+      <rect x="352" y="1018" width="176" height="56" rx="10"
+            fill="#F6C9C4" stroke="#C09090" stroke-width="1.5"
+            class="node-shape" style="--perimeter:470;animation-delay:.24s"/>
+      <text x="440" y="1038" class="td f10 nd-text" style="animation-delay:.44s">المرشدون</text>
+      <text x="440" y="1054" class="td f10 nd-text" style="animation-delay:.44s">المشروفون/المساندون</text>
+    </g>
+  </g>
+
+  <!-- مدير برنامج العمل الفتياني -->
+  <line x1="264" y1="850" x2="264" y2="870" class="conn" style="animation-delay:.56s;stroke-dasharray:22;stroke-dashoffset:22"/>
+  <g class="node-g" onclick="toggleSub('s-fatayi')" filter="url(#sh)">
+    <rect x="170" y="870" width="188" height="66" rx="12"
+          fill="#EE3B33" stroke="#A01010" stroke-width="1.5"
+          class="node-shape" style="--perimeter:510;animation-delay:.58s"/>
+    <text x="264" y="887" fill="#fff" font-weight="700" font-size="10px" class="nd-text" style="animation-delay:.78s">مدير برنامج</text>
+    <text x="264" y="903" fill="#fff" font-weight="700" font-size="10px" class="nd-text" style="animation-delay:.78s">العمل الفتياني</text>
+    <text x="264" y="919" fill="#fff" font-weight="700" font-size="10px" class="nd-text" style="animation-delay:.78s">البواسل ▼</text>
+  </g>
+  <g id="s-fatayi" class="hidden">
+    <line x1="264" y1="936" x2="264" y2="956" class="conn" style="stroke-dasharray:22;stroke-dashoffset:22"/>
+    <g filter="url(#sh)">
+      <rect x="170" y="956" width="188" height="48" rx="10"
+            fill="#F6C9C4" stroke="#C09090" stroke-width="1.5"
+            class="node-shape" style="--perimeter:480;"/>
+      <text x="264" y="980" class="td f11 nd-text" style="animation-delay:.2s">مجلس قيادة البرنامج</text>
+    </g>
+    <line x1="264" y1="1004" x2="264" y2="1024" class="conn" style="animation-delay:.22s;stroke-dasharray:22;stroke-dashoffset:22"/>
+    <g filter="url(#sh)">
+      <rect x="170" y="1024" width="188" height="56" rx="10"
+            fill="#F6C9C4" stroke="#C09090" stroke-width="1.5"
+            class="node-shape" style="--perimeter:490;animation-delay:.24s"/>
+      <text x="264" y="1044" class="td f10 nd-text" style="animation-delay:.44s">المرشدون</text>
+      <text x="264" y="1060" class="td f10 nd-text" style="animation-delay:.44s">المشروفون/المساندون</text>
+    </g>
+  </g>
+
+  <!-- مدير أنشطة مخيم البقعة -->
+  <line x1="80" y1="850" x2="80" y2="870" class="conn" style="animation-delay:.6s;stroke-dasharray:22;stroke-dashoffset:22"/>
+  <g class="node-g" onclick="toggleSub('s-baqaa')" filter="url(#sh)">
+    <rect x="0" y="870" width="160" height="60" rx="12"
+          fill="#EE3B33" stroke="#A01010" stroke-width="1.5"
+          class="node-shape" style="--perimeter:448;animation-delay:.62s"/>
+    <text x="80" y="889" fill="#fff" font-weight="700" font-size="11px" class="nd-text" style="animation-delay:.82s">مدير أنشطة</text>
+    <text x="80" y="906" fill="#fff" font-weight="700" font-size="11px" class="nd-text" style="animation-delay:.82s">مخيم البقعة ▼</text>
+  </g>
+  <g id="s-baqaa" class="hidden">
+    <line x1="80" y1="930" x2="80" y2="950" class="conn" style="stroke-dasharray:22;stroke-dashoffset:22"/>
+    <g filter="url(#sh)">
+      <rect x="0" y="950" width="160" height="48" rx="10"
+            fill="#F6C9C4" stroke="#C09090" stroke-width="1.5"
+            class="node-shape" style="--perimeter:420;"/>
+      <text x="80" y="974" class="td f11 nd-text" style="animation-delay:.2s">مجلس قيادة المنطقة</text>
+    </g>
+    <line x1="80" y1="998" x2="80" y2="1018" class="conn" style="animation-delay:.22s;stroke-dasharray:22;stroke-dashoffset:22"/>
+    <g filter="url(#sh)">
+      <rect x="0" y="1018" width="160" height="56" rx="10"
+            fill="#F6C9C4" stroke="#C09090" stroke-width="1.5"
+            class="node-shape" style="--perimeter:440;animation-delay:.24s"/>
+      <text x="80" y="1038" class="td f10 nd-text" style="animation-delay:.44s">المرشدون</text>
+      <text x="80" y="1054" class="td f10 nd-text" style="animation-delay:.44s">المشروفون/المساندون</text>
+    </g>
+  </g>
+
+</g><!-- /lv5 -->
+</svg>
+</div>
+<footer>جمعية يعرب للتنموية الخيرية — الهيكلية الإدارية</footer>
+
+<script>
+/* typewriter for SVG text */
+function typeText(el, delay){
+  var full = el.textContent;
+  el.textContent = '';
+  el.style.opacity = '1';
+  var i = 0;
+  setTimeout(function tick(){
+    if(i <= full.length){
+      el.textContent = full.slice(0,i);
+      i++;
+      setTimeout(tick, 28);
+    }
+  }, delay * 1000);
+}
+
+function animateGroup(groupEl){
+  /* reset + run draw animation on shapes */
+  groupEl.querySelectorAll('.node-shape').forEach(function(s){
+    var delay = parseFloat(s.style.animationDelay||'0');
+    var per = parseFloat(s.style.getPropertyValue('--perimeter')||'900');
+    s.style.strokeDasharray = per;
+    s.style.strokeDashoffset = per;
+    s.style.fillOpacity = '0';
+    s.style.animation = 'none';
+    void s.offsetWidth;
+    s.style.animation =
+      'drawRect .5s cubic-bezier(.4,0,.2,1) '+delay+'s forwards, '+
+      'fillIn .3s ease '+(delay+.45)+'s forwards';
+  });
+  /* connector lines */
+  groupEl.querySelectorAll('.conn').forEach(function(l){
+    var delay = parseFloat(l.style.animationDelay||'0');
+    var da = parseFloat(l.style.strokeDasharray||'400');
+    l.style.strokeDashoffset = da;
+    l.style.animation = 'none';
+    void l.offsetWidth;
+    l.style.animation = 'drawLine .4s ease '+delay+'s forwards';
+  });
+  /* typewriter on texts */
+  groupEl.querySelectorAll('.nd-text').forEach(function(t){
+    var delay = parseFloat(t.style.animationDelay||'.2');
+    typeText(t, delay);
+  });
+}
+
+var revealed = {1:false,2:false,3:false,4:false,5:false};
+
+function revealLevel(n){
+  if(revealed[n]) return;
+  revealed[n] = true;
+  var g = document.getElementById('lv'+n);
+  if(!g) return;
+  g.classList.remove('hidden');
+  animateGroup(g);
+}
+
+function toggleSub(id){
+  var el = document.getElementById(id);
+  if(!el) return;
+  if(el.classList.contains('hidden')){
+    el.classList.remove('hidden');
+    animateGroup(el);
+  } else {
+    el.classList.add('hidden');
+  }
+}
+</script>
+</body>
+</html>
