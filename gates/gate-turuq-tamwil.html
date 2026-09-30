@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>طرق التمويل — يعرب</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#7A1B24; --maroon-deep:#4E1015; --maroon-bright:#9C2530;
+    --maroon-line:#e6cdd0; --tint:#FCF3F3; --white:#ffffff;
+    --ink:#2b2220; --ink-soft:#8a7573;
+    --sand:#B0724A; --sand-deep:#7A4326;
+    --green:#5E7A6B;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Tajawal', sans-serif; color:var(--ink); background:var(--white); line-height:1.85; overflow-x:hidden;}
+  h1,h2,h3{font-family:'Aref Ruqaa', serif;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1060px; margin:0 auto; padding:0 28px;}
+
+  header{
+    position:sticky; top:0; z-index:200; background:rgba(255,255,255,0.92); backdrop-filter:blur(10px);
+    padding:15px 32px; border-bottom:1px solid var(--maroon-line);
+  }
+  .breadcrumb{font-size:0.85rem; color:var(--ink-soft);}
+  .breadcrumb a{color:var(--maroon); font-weight:700;}
+  .breadcrumb .sep{margin:0 8px; opacity:0.5;}
+
+  /* hero */
+  .hero{ padding:80px 0 60px; text-align:center; background:var(--tint); border-bottom:1px solid var(--maroon-line); }
+  .hero .kicker{ color:var(--maroon); letter-spacing:3px; font-size:0.78rem; font-weight:700; margin-bottom:16px; }
+  .hero h1{ font-size:2.7rem; color:var(--maroon-deep); margin-bottom:16px; line-height:1.35; }
+  .hero p{ color:var(--ink-soft); max-width:600px; margin:0 auto; font-size:1rem; }
+
+  .section{ padding:76px 0; }
+  .section.alt{ background:var(--tint); }
+  .section h2{ font-size:1.85rem; color:var(--maroon-deep); margin-bottom:12px; }
+  .section .lede{ color:var(--ink-soft); font-size:0.95rem; margin-bottom:44px; max-width:640px; }
+
+  /* sources: bordered list, no cards */
+  .src-list{ border-top:1px solid var(--maroon-line); }
+  .src-item{ display:flex; gap:20px; align-items:flex-start; padding:22px 4px; border-bottom:1px solid var(--maroon-line); }
+  .src-mark{ flex-shrink:0; width:12px; height:12px; background:var(--maroon); transform:rotate(45deg); border-radius:2px; margin-top:12px; }
+  .src-body h3{ font-family:'Tajawal',sans-serif; font-weight:700; font-size:1rem; color:var(--maroon-deep); margin-bottom:3px; }
+  .src-body p{ font-size:0.9rem; color:var(--ink-soft); }
+
+  /* pledge panel */
+  .pledge{ background:linear-gradient(155deg,#9C2530 0%,#4E1015 100%); color:#fff; border-radius:22px; padding:44px 40px; }
+  .pledge h2{ color:#fff; margin-bottom:10px; }
+  .pledge > p{ color:rgba(255,255,255,0.72); margin-bottom:30px; font-size:0.95rem; }
+  .pledge-row{ display:flex; gap:16px; align-items:flex-start; padding:16px 0; border-top:1px solid rgba(255,255,255,0.14); }
+  .pledge-row:first-of-type{ border-top:none; }
+  .pledge-check{ flex-shrink:0; width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,0.16); display:flex; align-items:center; justify-content:center; margin-top:3px; }
+  .pledge-check svg{ width:14px; height:14px; color:#fff; }
+  .pledge-row p{ font-size:0.93rem; color:rgba(255,255,255,0.94); }
+
+  /* support ladder */
+  .ladder{ position:relative; padding-right:34px; }
+  .ladder::before{ content:''; position:absolute; top:10px; bottom:10px; right:11px; width:2px; background:linear-gradient(var(--maroon), var(--sand)); }
+  .rung{ position:relative; padding:0 0 34px 0; }
+  .rung:last-child{ padding-bottom:0; }
+  .rung::before{
+    content:''; position:absolute; right:-29px; top:6px; width:16px; height:16px;
+    background:var(--white); border:3px solid var(--maroon); border-radius:50%;
+  }
+  .rung h3{ font-family:'Tajawal',sans-serif; font-weight:700; font-size:1.02rem; color:var(--maroon-deep); margin-bottom:5px; }
+  .rung p{ font-size:0.9rem; color:var(--ink-soft); }
+  .rung .amount{ display:inline-block; margin-top:8px; padding:5px 14px; border-radius:999px; background:var(--tint); border:1px solid var(--maroon-line); color:var(--maroon); font-weight:700; font-size:0.82rem; }
+  .rung.gold::before{ border-color:var(--sand); }
+  .rung.gold .amount{ background:#faf1e9; border-color:#e6cdb8; color:var(--sand-deep); }
+
+  /* zakat split */
+  .zakat-intro{ background:var(--white); border:1px solid var(--maroon-line); border-right:5px solid var(--maroon); border-radius:14px; padding:22px 24px; margin-bottom:34px; }
+  .zakat-intro p{ font-size:0.93rem; color:var(--ink); }
+  .zakat-cols{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  @media(max-width:760px){ .zakat-cols{ grid-template-columns:1fr; } }
+  .zcol h3{ font-family:'Tajawal',sans-serif; font-weight:700; font-size:1rem; margin-bottom:16px; display:flex; align-items:center; gap:9px; }
+  .zcol.yes h3{ color:var(--maroon-deep); }
+  .zcol.no h3{ color:var(--ink-soft); }
+  .zbadge{ width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+  .zcol.yes .zbadge{ background:var(--maroon); color:#fff; }
+  .zcol.no .zbadge{ background:#ded4d3; color:#6d5c5a; }
+  .zbadge svg{ width:12px; height:12px; }
+  .zitem{ padding:16px 18px; border-radius:12px; margin-bottom:12px; }
+  .zcol.yes .zitem{ background:var(--white); border:1px solid var(--maroon-line); }
+  .zcol.no .zitem{ background:#f6f2f1; border:1px solid #e7dedd; }
+  .zitem strong{ display:block; font-size:0.94rem; color:var(--maroon-deep); margin-bottom:4px; }
+  .zcol.no .zitem strong{ color:#6d5c5a; }
+  .zitem span{ font-size:0.86rem; color:var(--ink-soft); }
+  .zcol.no .zlist{ display:flex; flex-wrap:wrap; gap:9px; }
+  .zcol.no .zchip{ padding:9px 16px; border-radius:999px; background:#f6f2f1; border:1px solid #e7dedd; font-size:0.86rem; color:#6d5c5a; }
+
+  .cta{ text-align:center; padding:64px 28px; background:var(--tint); border-top:1px solid var(--maroon-line); }
+  .cta h2{ font-size:1.6rem; color:var(--maroon-deep); margin-bottom:10px; }
+  .cta p{ color:var(--ink-soft); margin-bottom:24px; font-size:0.95rem; }
+  .cta-btn{ display:inline-block; padding:14px 34px; border-radius:999px; background:var(--maroon); color:#fff; font-weight:700; font-size:0.92rem; transition:background .25s ease; }
+  .cta-btn:hover{ background:var(--maroon-deep); }
+
+  footer{ text-align:center; padding:34px 28px; color:var(--ink-soft); font-size:0.82rem; border-top:1px solid var(--maroon-line); }
+</style>
+<style id="yarob-polish">
+/* ===== yarob polish layer ===== */
+html, body{overflow-x:clip !important;}
+::selection{background:#7A1B24; color:#fff;}
+a:focus-visible, button:focus-visible, .gate-card:focus-visible{outline:2px solid #7A1B24; outline-offset:3px;}
+header .breadcrumb, header .bc{min-width:0;}
+footer{position:relative; border-top:0 !important; padding-top:58px !important;}
+footer::before{content:""; position:absolute; top:6px; left:0; right:0; height:30px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='45' viewBox='0 0 42 45'%3E%3Cpath d='M3.45 21.45l2.10 2.10M5.55 21.45l-2.10 2.10M6.45 18.45l2.10 2.10M8.55 18.45l-2.10 2.10M6.45 24.45l2.10 2.10M8.55 24.45l-2.10 2.10M9.45 15.45l2.10 2.10M11.55 15.45l-2.10 2.10M9.45 21.45l2.10 2.10M11.55 21.45l-2.10 2.10M9.45 27.45l2.10 2.10M11.55 27.45l-2.10 2.10M12.45 12.45l2.10 2.10M14.55 12.45l-2.10 2.10M12.45 30.45l2.10 2.10M14.55 30.45l-2.10 2.10M15.45 9.45l2.10 2.10M17.55 9.45l-2.10 2.10M15.45 21.45l2.10 2.10M17.55 21.45l-2.10 2.10M15.45 33.45l2.10 2.10M17.55 33.45l-2.10 2.10M18.45 6.45l2.10 2.10M20.55 6.45l-2.10 2.10M18.45 12.45l2.10 2.10M20.55 12.45l-2.10 2.10M18.45 18.45l2.10 2.10M20.55 18.45l-2.10 2.10M18.45 21.45l2.10 2.10M20.55 21.45l-2.10 2.10M18.45 24.45l2.10 2.10M20.55 24.45l-2.10 2.10M18.45 30.45l2.10 2.10M20.55 30.45l-2.10 2.10M18.45 36.45l2.10 2.10M20.55 36.45l-2.10 2.10M21.45 9.45l2.10 2.10M23.55 9.45l-2.10 2.10M21.45 21.45l2.10 2.10M23.55 21.45l-2.10 2.10M21.45 33.45l2.10 2.10M23.55 33.45l-2.10 2.10M24.45 12.45l2.10 2.10M26.55 12.45l-2.10 2.10M24.45 30.45l2.10 2.10M26.55 30.45l-2.10 2.10M27.45 15.45l2.10 2.10M29.55 15.45l-2.10 2.10M27.45 21.45l2.10 2.10M29.55 21.45l-2.10 2.10M27.45 27.45l2.10 2.10M29.55 27.45l-2.10 2.10M30.45 18.45l2.10 2.10M32.55 18.45l-2.10 2.10M30.45 24.45l2.10 2.10M32.55 24.45l-2.10 2.10M33.45 21.45l2.10 2.10M35.55 21.45l-2.10 2.10M0.45 0.45l2.10 2.10M2.55 0.45l-2.10 2.10M6.45 0.45l2.10 2.10M8.55 0.45l-2.10 2.10M12.45 0.45l2.10 2.10M14.55 0.45l-2.10 2.10M18.45 0.45l2.10 2.10M20.55 0.45l-2.10 2.10M24.45 0.45l2.10 2.10M26.55 0.45l-2.10 2.10M30.45 0.45l2.10 2.10M32.55 0.45l-2.10 2.10M36.45 0.45l2.10 2.10M38.55 0.45l-2.10 2.10M3.45 42.45l2.10 2.10M5.55 42.45l-2.10 2.10M9.45 42.45l2.10 2.10M11.55 42.45l-2.10 2.10M15.45 42.45l2.10 2.10M17.55 42.45l-2.10 2.10M21.45 42.45l2.10 2.10M23.55 42.45l-2.10 2.10M27.45 42.45l2.10 2.10M29.55 42.45l-2.10 2.10M33.45 42.45l2.10 2.10M35.55 42.45l-2.10 2.10M39.45 42.45l2.10 2.10M41.55 42.45l-2.10 2.10M0.45 21.45l2.10 2.10M2.55 21.45l-2.10 2.10M39.45 21.45l2.10 2.10M41.55 21.45l-2.10 2.10' stroke='%237A1B24' stroke-width='0.95' stroke-linecap='round' fill='none'/%3E%3C/svg%3E") repeat-x center / auto 30px; opacity:.5;
+  -webkit-mask:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent); mask:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);}
+.yp-logo{height:46px; width:auto; filter:drop-shadow(0 4px 10px rgba(122,27,36,.18));}
+header:has(> .bc){display:flex; align-items:center; justify-content:space-between; gap:14px;}
+@media (max-width:640px){
+  header{padding:8px 14px !important; gap:10px;}
+  header img, .yp-logo{height:38px !important;}
+  header .breadcrumb, header .bc{display:block !important; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-size:.8rem !important; flex:1 1 auto;}
+  header .breadcrumb > *, header .bc > *{display:inline;}
+  header .breadcrumb .sep{margin:0 5px;}
+}
+</style>
+<style id="tf-css">.tf-kick{display:inline-block; font-size:.8rem; letter-spacing:2px; font-weight:700; color:var(--maroon); background:var(--tint); border:1px solid var(--maroon-line); padding:4px 14px; border-radius:30px;}.tf-head{text-align:center; margin-bottom:28px;} .tf-head h2{font-family:'Aref Ruqaa',serif; font-size:clamp(2.1rem,4.6vw,3.2rem); color:var(--maroon-deep); line-height:1.45; margin:6px 0 2px;} .tf-head p{color:var(--ink-soft);}
+.tf{max-width:1180px; margin:0 auto; padding:70px 24px 20px;}
+.tf-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:12px;}
+.tf-card{position:relative; padding:18px 14px 16px; border-radius:18px; background:#fff; border:1px solid var(--maroon-line); text-align:center; box-shadow:0 16px 30px -24px rgba(78,16,21,.6);
+  opacity:0; animation:tfIn .7s ease forwards; animation-delay:calc(var(--i) * .1s);}
+@keyframes tfIn{from{opacity:0; transform:translateY(16px);} to{opacity:1; transform:none;}}
+.tf-card svg{width:32px; height:32px; fill:none; stroke:var(--maroon); stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round;}
+.tf-card h3{font-size:1rem; color:var(--maroon-deep); margin:6px 0 4px; line-height:1.5;} .tf-card p{font-size:.82rem; line-height:1.8; color:var(--ink);}
+.tf-flow{position:relative; height:330px; margin-top:-2px;}
+.tf-lines{position:absolute; top:0; left:0; width:100%; height:200px;}
+.tf-stream{fill:none; stroke:#7A1B24; stroke-width:3; stroke-dasharray:3 9; stroke-linecap:round; opacity:.55; animation:flow 1.2s linear infinite; animation-delay:calc(var(--i) * -.2s); vector-effect:non-scaling-stroke;}
+@keyframes flow{to{stroke-dashoffset:-24;}}
+.tf-jar{position:absolute; left:50%; top:150px; width:170px; margin-left:-85px; overflow:visible; filter:drop-shadow(0 20px 20px rgba(78,16,21,.3));}
+.jar-body{fill:#fbf1ea; stroke:#7A1B24; stroke-width:4;} .jar-lip{fill:#7A1B24;} .jar-band{fill:none; stroke:#7A1B24; stroke-width:3; stroke-dasharray:6 5;}
+.jar-water{fill:rgba(122,27,36,.55); animation:wave 3s linear infinite;}
+@keyframes wave{to{transform:translateX(-50px);}}
+.jar-t{font:700 20px 'Aref Ruqaa',serif; fill:#fff;}
+.tf-seals{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+.tf-seal{position:relative; padding:64px 26px 26px; border-radius:18px; background:#fffdf8; text-align:center; box-shadow:0 20px 40px -26px rgba(43,34,32,.6);
+  background-image:repeating-linear-gradient(transparent 0 29px, rgba(122,27,36,.07) 29px 30px); margin-top:40px;}
+.tf-wax{position:absolute; top:-40px; left:50%; width:84px; height:84px; margin-left:-42px; border-radius:48% 52% 45% 55% / 55% 45% 55% 45%; display:grid; place-items:center;
+  background:radial-gradient(circle at 35% 30%, #b83440, #7A1B24 55%, #4E1015); box-shadow:0 10px 20px rgba(78,16,21,.5), inset 0 0 0 7px rgba(0,0,0,.12);
+  transform:scale(0) rotate(-40deg); animation:stamp .6s cubic-bezier(.3,1.6,.5,1) forwards; animation-delay:calc(.3s + var(--i) * .2s);}
+.tf-wax::before{content:""; position:absolute; inset:12px; border-radius:50%; border:2px dashed rgba(255,255,255,.4);}
+.tf-wax b{font-family:'Aref Ruqaa',serif; font-size:2rem; color:#fbeee0;}
+@keyframes stamp{to{transform:none;}}
+.tf-seal p{font-size:1rem; line-height:2; color:var(--ink);}
+.tf-ladder{position:relative; max-width:760px; margin:0 auto; padding:10px 60px;}
+.tf-rail{position:absolute; top:0; bottom:0; width:12px; border-radius:8px; background:linear-gradient(90deg,#8a6a4f,#b8987b 50%,#8a6a4f);}
+.tf-rail.r1{right:30px;} .tf-rail.r2{left:30px;}
+.tf-rung{position:relative; display:flex; gap:16px; align-items:center; margin:0 -30px 22px; padding:18px 22px; border-radius:14px; background:#fff; border:1px solid var(--maroon-line);
+  box-shadow:0 14px 26px -18px rgba(78,16,21,.6); transition:transform .3s;}
+.tf-rung::before{content:""; position:absolute; top:50%; left:-4px; right:-4px; height:12px; margin-top:-6px; background:linear-gradient(#b8987b,#8a6a4f); border-radius:6px; z-index:-1;}
+.tf-rung:hover{transform:translateY(-4px);}
+.tf-rn{flex:none; width:44px; height:44px; border-radius:50%; display:grid; place-items:center; background:var(--maroon); color:#fff; font-family:'Aref Ruqaa',serif; font-size:1.3rem;}
+.tf-rung h3{font-size:1.08rem; color:var(--maroon-deep);} .tf-rung p{font-size:.88rem; line-height:1.9;}
+.tf-amt{display:inline-block; margin-top:6px; padding:4px 14px; border-radius:20px; background:var(--tint); color:var(--maroon); font-weight:700; font-size:.88rem; border:1px solid var(--maroon-line);}
+.tf-rung.gold{background:linear-gradient(135deg,#4E1015,#7A1B24); color:#fff; border:0;} .tf-rung.gold h3{color:#fff;} .tf-rung.gold .tf-rn{background:#fff; color:var(--maroon);}
+.tf-rung.gold .tf-amt{background:rgba(255,255,255,.18); color:#fff; border-color:rgba(255,255,255,.3);}
+.tf-zintro{text-align:center; max-width:760px; margin:-10px auto 26px; line-height:2;}
+.tf-doors{display:grid; grid-template-columns:repeat(8,1fr); gap:10px;}
+.tf-door{border:0; background:none; font:inherit; color:inherit; padding:0; text-align:center; cursor:default; perspective:600px;}
+.tf-door.open{cursor:pointer;}
+.tf-arch{position:relative; display:grid; place-items:center; height:170px; border-radius:60px 60px 4px 4px; overflow:hidden; padding:30px 8px 10px;
+  background:radial-gradient(80% 70% at 50% 70%, #fff3df, #f1d2b5); border:3px solid #7A1B24;}
+.tf-arch b{position:relative; z-index:2; font-size:.95rem; line-height:1.5; color:var(--maroon-deep);}
+.tf-leaf{position:absolute; inset:0; background:linear-gradient(100deg,#5A1119,#7A1B24); transform-origin:right; transition:transform .9s cubic-bezier(.3,.8,.25,1); z-index:1;}
+.tf-door.open .tf-leaf{transform:rotateY(-75deg);}
+.tf-door.open.on .tf-arch{box-shadow:0 0 0 4px var(--tint), 0 16px 30px -12px rgba(122,27,36,.7);}
+.tf-door.shut .tf-arch{border-color:#b7a6a4; background:#eee6e4;}
+.tf-door.shut .tf-leaf{background:linear-gradient(100deg,#9a8a88,#b7a6a4);}
+.tf-door.shut b{color:#fff; z-index:2;}
+.tf-lock{position:absolute; z-index:2; bottom:14px; left:50%; width:16px; height:14px; margin-left:-8px; border-radius:3px; background:#fff; opacity:.8;}
+.tf-lock::before{content:""; position:absolute; bottom:12px; left:3px; width:10px; height:9px; border:2px solid #fff; border-bottom:0; border-radius:6px 6px 0 0;}
+.tf-door em{display:block; font-style:normal; font-size:.66rem; color:var(--ink-soft); margin-top:6px; line-height:1.4;}
+.tf-zinfo{position:relative; max-width:760px; margin:24px auto 0;}
+.tf-zinfo article{display:none; padding:24px 28px; border-radius:18px; background:#fff; border:1px solid var(--maroon-line); box-shadow:0 26px 50px -30px rgba(78,16,21,.6); text-align:center;}
+.tf-zinfo article.on{display:block; animation:tfIn .5s ease;}
+.tf-zinfo h3{font-family:'Aref Ruqaa',serif; font-size:1.8rem; color:var(--maroon-deep);} .tf-zinfo p{line-height:2.1;}
+.cta{margin-top:70px !important;}
+@media (max-width:900px){ .tf-grid{grid-template-columns:repeat(3,1fr);} .tf-doors{grid-template-columns:repeat(4,1fr);} .tf-flow{height:260px;} .tf-jar{width:130px; margin-left:-65px; top:120px;} }
+@media (max-width:640px){ .tf{padding:50px 16px 10px;} .tf-grid{grid-template-columns:1fr 1fr;} .tf-seals{grid-template-columns:1fr; gap:10px;} .tf-ladder{padding:0 34px;} .tf-rung{margin:0 -20px 18px; padding:14px 14px;} .tf-rail.r1{right:16px;} .tf-rail.r2{left:16px;}
+  .tf-arch{height:130px;} .tf-arch b{font-size:.82rem;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="breadcrumb">
+    <a href="../yarob-concept.html">الرئيسية</a>
+    <span class="sep">/</span>
+    <span>طرق التمويل</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">جمعية يعرب التنموية الخيرية</div>
+    <h1>من أين تأتي الموارد، وكيف يمكنك أن تكون جزءاً منها</h1>
+    <p>مصادر تمويل يعرب، وما تقدّمه على نفقتها، وأبواب المساهمة المتاحة أمامك — بما فيها زكاة الأموال.</p>
+  </div>
+</section>
+
+
+<section class="tf tf-src">
+  <div class="tf-head"><span class="tf-kick">٦ روافد</span><h2>مصادر التمويل</h2><p>تعتمد يعرب على تعدد مصادر التمويل وتنوّعها بدل الاعتماد على مصدر واحد.</p></div>
+  <div class="tf-grid"><div class="tf-card" style="--i:0"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-6.6 7-6.6s7 2.7 7 6.6"/></svg><h3>اشتراكات الأعضاء</h3><p>يلتزم كل عضو في يعرب بمبلغ سنوي قيمته 30 د.أ.</p></div><div class="tf-card" style="--i:1"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><h3>برنامج أصدقاء يعرب</h3><p>يلتزم من يرغب من أصدقاء العمل الخيري والتطوعي بمبلغ يراه مناسباً يُدفع بشكل شهري.</p></div><div class="tf-card" style="--i:2"><svg viewBox="0 0 24 24"><path d="M3 13h3l3 3h4a2 2 0 0 0 0-4h-3"/><path d="M13 12l5-3a2 2 0 0 1 2 3.4L14 17H9"/></svg><h3>التبرعات العامة</h3><p>تعتمد يعرب على التبرعات من الأشخاص والشركات الراغبة في الدعم.</p></div><div class="tf-card" style="--i:3"><svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-5h6v5"/><path d="M12 4v-2"/></svg><h3>حملات جمع التبرعات</h3><p>تقيم يعرب حفلات أو فعاليات تهدف لجمع التبرعات.</p></div><div class="tf-card" style="--i:4"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M3 11h18M8 15h3"/></svg><h3>المنح المالية</h3><p>المقدمة من مؤسسات وطنية أو دولية.</p></div><div class="tf-card" style="--i:5"><svg viewBox="0 0 24 24"><path d="M5 20h14M7 16V9M12 16V5M17 16v-4"/></svg><h3>عوائد الاستثمارات</h3><p>مثل مطبخ يعرب الإنتاجي.</p></div></div>
+  <div class="tf-flow"><svg class="tf-lines" viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true"><path class="tf-stream" style="--i:0" d="M83 0 C83 90, 500 70, 500 200"/><path class="tf-stream" style="--i:1" d="M250 0 C250 90, 500 70, 500 200"/><path class="tf-stream" style="--i:2" d="M417 0 C417 90, 500 70, 500 200"/><path class="tf-stream" style="--i:3" d="M583 0 C583 90, 500 70, 500 200"/><path class="tf-stream" style="--i:4" d="M750 0 C750 90, 500 70, 500 200"/><path class="tf-stream" style="--i:5" d="M917 0 C917 90, 500 70, 500 200"/></svg><svg class="tf-jar" viewBox="0 0 200 220" aria-hidden="true">
+  <defs><clipPath id="jarClip"><path d="M60 40 C60 60 30 70 26 110 C22 170 60 206 100 206 C140 206 178 170 174 110 C170 70 140 60 140 40Z"/></clipPath></defs>
+  <path class="jar-body" d="M60 40 C60 60 30 70 26 110 C22 170 60 206 100 206 C140 206 178 170 174 110 C170 70 140 60 140 40Z"/>
+  <g clip-path="url(#jarClip)"><path class="jar-water" d="M0 150 Q25 140 50 150 T100 150 T150 150 T200 150 T250 150 V230 H0Z"/></g>
+  <path class="jar-lip" d="M52 30 H148 V44 H52Z"/>
+  <path class="jar-band" d="M34 120 C80 132 120 132 166 120"/>
+  <text x="100" y="178" text-anchor="middle" class="jar-t">يعرب</text>
+</svg></div>
+</section>
+<section class="tf tf-pl">
+  <div class="tf-head"><span class="tf-kick">٣ عهود</span><h2>ماذا تقدم يعرب على نفقتها؟</h2><p>ثلاثة التزامات ثابتة تحكم طريقة إنفاق يعرب لمواردها.</p></div>
+  <div class="tf-seals"><div class="tf-seal" style="--i:0"><span class="tf-wax"><b>١</b></span><p>كل الخدمات التي تقدمها يعرب مجاناً بدون أي مقابل.</p></div><div class="tf-seal" style="--i:1"><span class="tf-wax"><b>٢</b></span><p>الجهود التقنية كالتدريبات والإرشاد الاجتماعي والنفسي وعمليات التيسير والتدريس تقدم كاملة من جهود المتطوعين والمتطوعات بدون أي مقابل مادي.</p></div><div class="tf-seal" style="--i:2"><span class="tf-wax"><b>٣</b></span><p>المصاريف الإدارية والعمومية تأتي من اشتراكات الأعضاء.</p></div></div>
+</section>
+<section class="tf tf-ld">
+  <div class="tf-head"><span class="tf-kick">درجات المساهمة</span><h2>كيف يمكنك أن تدعمنا؟</h2><p>بالإمكان توفير الدعم المادي بأشكاله النقدية والعينية حسب الموازنة العامة للدورة البرامجية لكل عام، ويُفسَّر كل محور بشكل مستقل (موازنة المساعدات وموازنة برامج التعليم المجتمعي).</p></div>
+  <div class="tf-ladder">
+    <span class="tf-rail r1" aria-hidden="true"></span><span class="tf-rail r2" aria-hidden="true"></span>
+    <div class="tf-rung" style="--i:4"><span class="tf-rn">٥</span><div><h3>تخصيص تبرعك لبند بعينه</h3><p>بإمكانك أن تشترط تخصيص المبلغ لبرامج التعليم المجتمعي، أو للمساعدات، بل ويمكنك أن تخصص تبرعك للكفالات فقط على سبيل المثال، أو لقرطاسية أنشطة التعليم المجتمعي مثلاً — حسب بنود الإنفاق الموضحة في الموازنات المالية المرفقة.</p></div></div><div class="tf-rung gold" style="--i:3"><span class="tf-rn">٤</span><div><h3>برنامج الأعضاء الفخريين</h3><p>الاشتراك لتصبح راعياً ذهبياً ليعرب.</p><span class=tf-amt>١٥٠٠ دينار سنوياً</span></div></div><div class="tf-rung" style="--i:2"><span class="tf-rn">٣</span><div><h3>مساهمة شهرية</h3><p>بإمكانك تحويله مباشرة لحسابنا البنكي أو التواصل مع الإدارة لاستلامه حسب الأصول.</p><span class=tf-amt>٥٠ – ١٠٠ دينار شهرياً</span></div></div><div class="tf-rung" style="--i:1"><span class="tf-rn">٢</span><div><h3>التبرعات العينية</h3><p>المساهمة في التبرعات العينية المنبثقة من الموازنة مثل الوجبات الخفيفة والسكاكر والقرطاسية.</p></div></div><div class="tf-rung" style="--i:0"><span class="tf-rn">١</span><div><h3>وجبات الإفطار المركزي الرمضاني</h3><p>المساهمة في توفير وجبات الطعام والشراب للإفطار المركزي الرمضاني السنوي.</p></div></div>
+  </div>
+</section>
+<section class="tf tf-zk">
+  <div class="tf-head"><span class="tf-kick">٨ أبواب</span><h2>كيف تدير يعرب زكاة الأموال؟</h2><p>توضيح لأبواب الزكاة الثمانية، وأيّها يقع ضمن اختصاص يعرب.</p></div>
+  <p class="tf-zintro">بإمكان يعرب استقبال زكاة الأموال وتخصيصها حسب الشريعة الإسلامية لأبوابها الآتية، وبما يقترن بطبيعة اختصاص يعرب.</p>
+  <div class="tf-doors">
+    <button class="tf-door open" style="--i:0" data-k="0"><span class="tf-arch"><span class="tf-leaf"></span><b>الفقراء</b></span><em>أبواب تُنفق من خلال يعرب</em></button><button class="tf-door open" style="--i:1" data-k="1"><span class="tf-arch"><span class="tf-leaf"></span><b>المساكين</b></span><em>أبواب تُنفق من خلال يعرب</em></button><button class="tf-door open" style="--i:2" data-k="2"><span class="tf-arch"><span class="tf-leaf"></span><b>الغارمون</b></span><em>أبواب تُنفق من خلال يعرب</em></button>
+    <div class="tf-door shut" style="--i:3"><span class="tf-arch"><span class="tf-leaf"></span><b>العاملون على الزكاة</b><i class="tf-lock" aria-hidden="true"></i></span><em>أبواب لا تُنفق من خلال يعرب</em></div><div class="tf-door shut" style="--i:4"><span class="tf-arch"><span class="tf-leaf"></span><b>المؤلفة قلوبهم</b><i class="tf-lock" aria-hidden="true"></i></span><em>أبواب لا تُنفق من خلال يعرب</em></div><div class="tf-door shut" style="--i:5"><span class="tf-arch"><span class="tf-leaf"></span><b>في الرقاب</b><i class="tf-lock" aria-hidden="true"></i></span><em>أبواب لا تُنفق من خلال يعرب</em></div><div class="tf-door shut" style="--i:6"><span class="tf-arch"><span class="tf-leaf"></span><b>في سبيل الله</b><i class="tf-lock" aria-hidden="true"></i></span><em>أبواب لا تُنفق من خلال يعرب</em></div><div class="tf-door shut" style="--i:7"><span class="tf-arch"><span class="tf-leaf"></span><b>ابن السبيل</b><i class="tf-lock" aria-hidden="true"></i></span><em>أبواب لا تُنفق من خلال يعرب</em></div>
+  </div>
+  <div class="tf-zinfo"><article data-k="0" class=on><h3>الفقراء</h3><p>توزيعها لمرة واحدة أو بشكل شهري، وتُنفق على ما يحتاجه الفقير مثل نفقات دراسة أو نفقات طعام وشراب وغيرها، وباستطاعة المتبرع أن يحدد ما يرغب به لتوجيه التبرع.</p></article><article data-k="1"><h3>المساكين</h3><p>توزيعها لمرة واحدة أو بشكل شهري، وتُنفق على ما يحتاجه المسكين مثل نفقات دراسة أو نفقات طعام وشراب وغيرها، وباستطاعة المتبرع أن يحدد ما يرغب به لتوجيه التبرع.</p></article><article data-k="2"><h3>الغارمون</h3><p>تقع ضمن اختصاص يعرب، وتُدفع للغارمين في أي مجال هو غارم به كتسديد الديون وغيره.</p></article></div>
+</section>
+<div class="cta">
+  <h2>جاهز تساهم؟</h2>
+  <p>تواصل مع إدارة يعرب لترتيب طريقة الدعم التي تناسبك.</p>
+  <a class="cta-btn" href="https://wa.me/962786279366" target="_blank" rel="noopener">تواصل عبر واتساب</a>
+</div>
+<footer>جمعية يعرب للتنموية الخيرية — طرق التمويل</footer>
+
+<script id="tf-js">
+(function(){
+  const ds = document.querySelectorAll('.tf-door.open'), info = document.querySelectorAll('.tf-zinfo article');
+  function pick(k){ ds.forEach(d => d.classList.toggle('on', d.dataset.k === k)); info.forEach(a => a.classList.toggle('on', a.dataset.k === k)); }
+  ds.forEach(d => d.addEventListener('click', () => pick(d.dataset.k))); pick('0');
+})();
+</script>
+</body>
+</html>

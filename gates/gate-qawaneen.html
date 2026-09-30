@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>القوانين والأنظمة والسياسات — يعرب</title>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--m:#7A1B24;--md:#4E1015;--ml:#e6cdd0;--tint:#FCF3F3;--w:#fff;--ink:#2b2220;--soft:#8a7573;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Tajawal',sans-serif;color:var(--ink);background:var(--w);line-height:1.8;}
+a{color:inherit;text-decoration:none;}
+header{position:sticky;top:0;z-index:300;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);
+  padding:14px 28px;border-bottom:1px solid var(--ml);}
+.bc{font-size:.84rem;color:var(--soft);}
+.bc a{color:var(--m);font-weight:700;}
+.bc .sep{margin:0 8px;opacity:.4;}
+.hero{padding:44px 28px 30px;text-align:center;background:var(--tint);border-bottom:1px solid var(--ml);}
+.hero .kicker{color:var(--m);letter-spacing:3px;font-size:.74rem;font-weight:700;margin-bottom:10px;}
+.hero h1{font-family:'Aref Ruqaa',serif;font-size:2.1rem;color:var(--md);margin-bottom:8px;}
+.hero p{color:var(--soft);font-size:.92rem;}
+
+.stage{max-width:860px;margin:0 auto;padding:36px 20px 80px;}
+
+/* ── 4 main cards ── */
+.cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:0;}
+@media(max-width:600px){.cards-grid{grid-template-columns:1fr;}}
+
+.main-card{
+  border:1.5px solid var(--ml);border-radius:16px;padding:24px 20px;
+  background:var(--w);cursor:pointer;transition:border-color .2s,box-shadow .2s;
+  display:flex;align-items:flex-start;gap:14px;
+}
+.main-card:hover{border-color:var(--m);box-shadow:0 6px 18px rgba(122,27,36,.12);}
+.main-card.inactive{cursor:default;}
+.main-card.inactive:hover{border-color:var(--ml);box-shadow:none;}
+.mc-icon{flex-shrink:0;width:44px;height:44px;border-radius:12px;background:var(--tint);
+  display:flex;align-items:center;justify-content:center;color:var(--m);}
+.mc-icon svg{width:22px;height:22px;}
+.mc-body h3{font-family:'Aref Ruqaa',serif;font-size:1.15rem;color:var(--md);margin-bottom:4px;}
+.mc-body p{font-size:.82rem;color:var(--soft);}
+.mc-arrow{margin-right:auto;flex-shrink:0;color:var(--ml);align-self:center;transition:color .2s;}
+.main-card:hover .mc-arrow{color:var(--m);}
+.main-card.inactive .mc-arrow{display:none;}
+
+/* ── modal ── */
+.overlay{position:fixed;inset:0;background:rgba(46,20,20,.6);z-index:900;
+  display:none;align-items:center;justify-content:center;padding:20px;}
+.overlay.open{display:flex;}
+.modal{background:var(--w);border-radius:20px;max-width:820px;width:100%;
+  max-height:90vh;overflow-y:auto;position:relative;padding:44px 28px 32px;}
+.modal-close{position:absolute;top:14px;left:14px;width:36px;height:36px;
+  border-radius:50%;background:var(--w);border:1.5px solid var(--ml);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--m);}
+.modal-close svg{width:16px;height:16px;}
+.modal-title{font-family:'Aref Ruqaa',serif;font-size:1.55rem;color:var(--md);margin-bottom:6px;}
+.modal-sub{font-size:.85rem;color:var(--soft);margin-bottom:28px;}
+
+/* ── policy columns inside modal ── */
+.pol-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+@media(max-width:900px){.pol-cols{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.pol-cols{grid-template-columns:1fr 1fr;}}
+.pol-col h4{font-family:'Aref Ruqaa',serif;font-size:1rem;color:var(--md);
+  padding:10px 14px;background:var(--tint);border-radius:10px;margin-bottom:12px;
+  border-right:3px solid var(--m);}
+.pol-col ul{list-style:none;padding:0;}
+.pol-col ul li{
+  padding:9px 12px;border-bottom:1px solid var(--ml);font-size:.83rem;
+  color:var(--ink);display:flex;align-items:flex-start;gap:7px;
+}
+.pol-col ul li::before{
+  content:'';flex-shrink:0;width:7px;height:7px;border-radius:2px;
+  background:var(--m);transform:rotate(45deg);margin-top:7px;
+}
+.pol-col ul li:last-child{border-bottom:none;}
+
+footer{text-align:center;padding:30px;color:var(--soft);font-size:.8rem;border-top:1px solid var(--ml);}
+</style>
+<style id="yarob-polish">
+/* ===== yarob polish layer ===== */
+html, body{overflow-x:clip !important;}
+::selection{background:#7A1B24; color:#fff;}
+a:focus-visible, button:focus-visible, .gate-card:focus-visible{outline:2px solid #7A1B24; outline-offset:3px;}
+header .breadcrumb, header .bc{min-width:0;}
+footer{position:relative; border-top:0 !important; padding-top:58px !important;}
+footer::before{content:""; position:absolute; top:6px; left:0; right:0; height:30px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='45' viewBox='0 0 42 45'%3E%3Cpath d='M3.45 21.45l2.10 2.10M5.55 21.45l-2.10 2.10M6.45 18.45l2.10 2.10M8.55 18.45l-2.10 2.10M6.45 24.45l2.10 2.10M8.55 24.45l-2.10 2.10M9.45 15.45l2.10 2.10M11.55 15.45l-2.10 2.10M9.45 21.45l2.10 2.10M11.55 21.45l-2.10 2.10M9.45 27.45l2.10 2.10M11.55 27.45l-2.10 2.10M12.45 12.45l2.10 2.10M14.55 12.45l-2.10 2.10M12.45 30.45l2.10 2.10M14.55 30.45l-2.10 2.10M15.45 9.45l2.10 2.10M17.55 9.45l-2.10 2.10M15.45 21.45l2.10 2.10M17.55 21.45l-2.10 2.10M15.45 33.45l2.10 2.10M17.55 33.45l-2.10 2.10M18.45 6.45l2.10 2.10M20.55 6.45l-2.10 2.10M18.45 12.45l2.10 2.10M20.55 12.45l-2.10 2.10M18.45 18.45l2.10 2.10M20.55 18.45l-2.10 2.10M18.45 21.45l2.10 2.10M20.55 21.45l-2.10 2.10M18.45 24.45l2.10 2.10M20.55 24.45l-2.10 2.10M18.45 30.45l2.10 2.10M20.55 30.45l-2.10 2.10M18.45 36.45l2.10 2.10M20.55 36.45l-2.10 2.10M21.45 9.45l2.10 2.10M23.55 9.45l-2.10 2.10M21.45 21.45l2.10 2.10M23.55 21.45l-2.10 2.10M21.45 33.45l2.10 2.10M23.55 33.45l-2.10 2.10M24.45 12.45l2.10 2.10M26.55 12.45l-2.10 2.10M24.45 30.45l2.10 2.10M26.55 30.45l-2.10 2.10M27.45 15.45l2.10 2.10M29.55 15.45l-2.10 2.10M27.45 21.45l2.10 2.10M29.55 21.45l-2.10 2.10M27.45 27.45l2.10 2.10M29.55 27.45l-2.10 2.10M30.45 18.45l2.10 2.10M32.55 18.45l-2.10 2.10M30.45 24.45l2.10 2.10M32.55 24.45l-2.10 2.10M33.45 21.45l2.10 2.10M35.55 21.45l-2.10 2.10M0.45 0.45l2.10 2.10M2.55 0.45l-2.10 2.10M6.45 0.45l2.10 2.10M8.55 0.45l-2.10 2.10M12.45 0.45l2.10 2.10M14.55 0.45l-2.10 2.10M18.45 0.45l2.10 2.10M20.55 0.45l-2.10 2.10M24.45 0.45l2.10 2.10M26.55 0.45l-2.10 2.10M30.45 0.45l2.10 2.10M32.55 0.45l-2.10 2.10M36.45 0.45l2.10 2.10M38.55 0.45l-2.10 2.10M3.45 42.45l2.10 2.10M5.55 42.45l-2.10 2.10M9.45 42.45l2.10 2.10M11.55 42.45l-2.10 2.10M15.45 42.45l2.10 2.10M17.55 42.45l-2.10 2.10M21.45 42.45l2.10 2.10M23.55 42.45l-2.10 2.10M27.45 42.45l2.10 2.10M29.55 42.45l-2.10 2.10M33.45 42.45l2.10 2.10M35.55 42.45l-2.10 2.10M39.45 42.45l2.10 2.10M41.55 42.45l-2.10 2.10M0.45 21.45l2.10 2.10M2.55 21.45l-2.10 2.10M39.45 21.45l2.10 2.10M41.55 21.45l-2.10 2.10' stroke='%237A1B24' stroke-width='0.95' stroke-linecap='round' fill='none'/%3E%3C/svg%3E") repeat-x center / auto 30px; opacity:.5;
+  -webkit-mask:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent); mask:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);}
+.yp-logo{height:46px; width:auto; filter:drop-shadow(0 4px 10px rgba(122,27,36,.18));}
+header:has(> .bc){display:flex; align-items:center; justify-content:space-between; gap:14px;}
+@media (max-width:640px){
+  header{padding:8px 14px !important; gap:10px;}
+  header img, .yp-logo{height:38px !important;}
+  header .breadcrumb, header .bc{display:block !important; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-size:.8rem !important; flex:1 1 auto;}
+  header .breadcrumb > *, header .bc > *{display:inline;}
+  header .breadcrumb .sep{margin:0 5px;}
+}
+.hero h1{line-height:1.5;}</style>
+<style id="qa-css">.qa-kick{display:inline-block; font-size:.8rem; letter-spacing:2px; font-weight:700; color:var(--maroon); background:var(--tint); border:1px solid var(--maroon-line); padding:4px 14px; border-radius:30px;}.qa-head{text-align:center; margin-bottom:28px;} .qa-head h2{font-family:'Aref Ruqaa',serif; font-size:clamp(2.1rem,4.6vw,3.2rem); color:var(--maroon-deep); line-height:1.45; margin:6px 0 2px;} .qa-head p{color:var(--ink-soft);}
+.stage{display:none !important;}
+.ar-shelf{max-width:1100px; margin:0 auto; padding:40px 24px 110px;}
+.shelf{position:relative; padding:0 30px;}
+.shelf-row{display:flex; justify-content:center; align-items:flex-end; gap:16px; min-height:420px; padding:0 20px;}
+.vol{position:relative; width:150px; height:calc(360px + (var(--i) % 2) * 30px); border:0; padding:22px 14px; border-radius:6px 6px 2px 2px; cursor:pointer; font:inherit; color:#fff; text-align:center;
+  display:flex; flex-direction:column; align-items:center; gap:12px; background:linear-gradient(90deg,#4E1015 0%,#7A1B24 18%,#8d2530 50%,#7A1B24 82%,#4E1015 100%);
+  box-shadow:inset 0 0 0 5px rgba(0,0,0,.14), 0 20px 30px -16px rgba(43,8,12,.8); transition:transform .5s cubic-bezier(.2,.8,.25,1), box-shadow .5s;
+  opacity:0; animation:volIn .7s cubic-bezier(.2,.8,.25,1) forwards; animation-delay:calc(var(--i) * .12s);}
+@keyframes volIn{from{opacity:0; transform:translateY(40px);} to{opacity:1; transform:none;}}
+.vol::before, .vol::after{content:""; position:absolute; left:10px; right:10px; height:10px; background:repeating-linear-gradient(90deg, #fbeee0 0 6px, transparent 6px 10px); opacity:.6;}
+.vol::before{top:12px;} .vol::after{bottom:12px;}
+.vol-top{width:46px; height:46px; margin-top:10px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewBox='0 0 33 33'%3E%3Cpath d='M0.45 15.45l2.10 2.10M2.55 15.45l-2.10 2.10M3.45 12.45l2.10 2.10M5.55 12.45l-2.10 2.10M3.45 18.45l2.10 2.10M5.55 18.45l-2.10 2.10M6.45 9.45l2.10 2.10M8.55 9.45l-2.10 2.10M6.45 15.45l2.10 2.10M8.55 15.45l-2.10 2.10M6.45 21.45l2.10 2.10M8.55 21.45l-2.10 2.10M9.45 6.45l2.10 2.10M11.55 6.45l-2.10 2.10M9.45 24.45l2.10 2.10M11.55 24.45l-2.10 2.10M12.45 3.45l2.10 2.10M14.55 3.45l-2.10 2.10M12.45 15.45l2.10 2.10M14.55 15.45l-2.10 2.10M12.45 27.45l2.10 2.10M14.55 27.45l-2.10 2.10M15.45 0.45l2.10 2.10M17.55 0.45l-2.10 2.10M15.45 6.45l2.10 2.10M17.55 6.45l-2.10 2.10M15.45 12.45l2.10 2.10M17.55 12.45l-2.10 2.10M15.45 15.45l2.10 2.10M17.55 15.45l-2.10 2.10M15.45 18.45l2.10 2.10M17.55 18.45l-2.10 2.10M15.45 24.45l2.10 2.10M17.55 24.45l-2.10 2.10M15.45 30.45l2.10 2.10M17.55 30.45l-2.10 2.10M18.45 3.45l2.10 2.10M20.55 3.45l-2.10 2.10M18.45 15.45l2.10 2.10M20.55 15.45l-2.10 2.10M18.45 27.45l2.10 2.10M20.55 27.45l-2.10 2.10M21.45 6.45l2.10 2.10M23.55 6.45l-2.10 2.10M21.45 24.45l2.10 2.10M23.55 24.45l-2.10 2.10M24.45 9.45l2.10 2.10M26.55 9.45l-2.10 2.10M24.45 15.45l2.10 2.10M26.55 15.45l-2.10 2.10M24.45 21.45l2.10 2.10M26.55 21.45l-2.10 2.10M27.45 12.45l2.10 2.10M29.55 12.45l-2.10 2.10M27.45 18.45l2.10 2.10M29.55 18.45l-2.10 2.10M30.45 15.45l2.10 2.10M32.55 15.45l-2.10 2.10' stroke='%237A1B24' stroke-width='1.3' stroke-linecap='round' fill='none'/%3E%3C/svg%3E") center/contain no-repeat; filter:brightness(0) invert(1); opacity:.8;}
+.vol-t{font-family:'Aref Ruqaa',serif; font-size:1.35rem; line-height:1.5; margin-top:20px;}
+.vol-s{font-size:.75rem; line-height:1.6; opacity:.85;}
+.vol-tag{margin-top:auto; font-size:.72rem; font-weight:700; padding:4px 10px; border-radius:20px; background:rgba(255,255,255,.14);}
+.vol-tag.go{background:#fff; color:var(--maroon);}
+.vol:not(.off):hover{transform:translateY(-34px) rotate(-2deg); box-shadow:inset 0 0 0 5px rgba(0,0,0,.14), 0 50px 50px -20px rgba(43,8,12,.8);}
+.vol.off{cursor:not-allowed; filter:saturate(.35) brightness(.9);}
+.shelf-board{height:26px; margin:0 -10px; border-radius:6px; background:linear-gradient(#b8987b,#7d5f45); box-shadow:0 18px 30px -12px rgba(0,0,0,.45);}
+.overlay .modal{max-width:1060px !important; width:100%; border-radius:26px !important;}
+.overlay .pol-cols, .overlay .modal-sub{display:none !important;}
+.overlay .modal-title{font-family:'Aref Ruqaa',serif !important; font-size:2.2rem !important; text-align:center;}
+.arch-top{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin:10px 0 18px;}
+.arch-count{display:flex; align-items:baseline; gap:10px;} .arch-count b{font-family:'Aref Ruqaa',serif; font-size:2.6rem; color:var(--maroon);} .arch-count span{color:var(--ink-soft);}
+.arch-search input{width:min(320px,80vw); padding:11px 18px; border-radius:30px; border:1.5px solid var(--maroon-line); font:inherit; outline:none;}
+.arch-search input:focus{border-color:var(--maroon);}
+.arch-drawers{display:grid; grid-template-columns:repeat(4,1fr); gap:10px;}
+.dw{position:relative; padding:16px 12px 12px; border-radius:12px 12px 0 0; border:1px solid var(--maroon-line); border-bottom:0; background:linear-gradient(#fbf3ec,#f1e2d6); cursor:pointer; font:inherit; color:var(--maroon-deep); transition:all .3s;}
+.dw::after{content:""; position:absolute; left:50%; top:8px; width:36px; height:5px; margin-left:-18px; border-radius:3px; background:#b8987b;}
+.dw b{display:block; font-size:.95rem;} .dw span{font-family:'Aref Ruqaa',serif; font-size:1.2rem; color:var(--maroon);}
+.dw.on{background:var(--maroon); color:#fff; transform:translateY(-6px);} .dw.on span{color:#fff;} .dw.on::after{background:rgba(255,255,255,.5);}
+.arch-cards{min-height:260px; padding:22px; border-radius:0 0 18px 18px; background:#f6ece3; border:1px solid var(--maroon-line); box-shadow:inset 0 10px 20px -14px rgba(0,0,0,.35);}
+.ix-pane{display:none; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:10px;}
+.ix-pane.on{display:grid;}
+.ix{position:relative; display:flex; gap:10px; align-items:flex-start; padding:12px 14px 12px 12px; border-radius:6px; background:#fffdf8; box-shadow:0 6px 14px -10px rgba(0,0,0,.5);
+  border-top:3px solid var(--maroon); opacity:0; animation:volIn .45s ease forwards; animation-delay:calc(var(--j) * 25ms); transition:transform .2s;}
+.ix:hover{transform:translateY(-3px) rotate(-.6deg);}
+.ix-n{flex:none; font-family:'Aref Ruqaa',serif; color:var(--maroon); font-size:1.1rem; min-width:22px;}
+.ix-t{font-size:.86rem; line-height:1.7;}
+.ix mark{background:#f8d7da; color:inherit; border-radius:3px;}
+.ix-res .ix small{display:block; font-size:.7rem; color:var(--ink-soft);}
+@media (max-width:760px){ .shelf-row{flex-wrap:wrap; min-height:0; gap:10px;} .vol{width:calc(50% - 10px); height:260px;} .vol-t{font-size:1.1rem; margin-top:6px;} .vol::before{top:10px;} .vol::after{bottom:10px;}
+  .arch-drawers{grid-template-columns:1fr 1fr;} .dw{border-radius:12px; border-bottom:1px solid var(--maroon-line);} }
+</style>
+</head>
+<body>
+<header>
+  <div class="bc">
+    <a href="../yarob-concept.html">الرئيسية</a><span class="sep">/</span>
+    <a href="gate-08.html">القدرات المؤسسية</a><span class="sep">/</span>
+    <span>القوانين والأنظمة والسياسات</span>
+  </div>
+  <img class="yp-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVkAAADfCAYAAABcbKCqAAAst0lEQVR4nO2dT4gky7fXvyPPjQu77vIhOHV3Ln6PzkvuFO0cUMHnxamRV4iF0DmgyMXFVC/EhWDXbEWYHFRcqHT2wnxCIpPtA3UhTDZP4bcpb/V7wm95q1Dw4cJbJQguhOciTnRGRUf+z6jMqjofaLIrM+LEycjIkxEn/r36/ocbMAzDMHb4I30rwDAMc8qwkWUYhrEIG1mGYRiLsJFlGIaxyK/1rcAQcOPIATCin2P609kCWNH/6+V0traqFMMwJ8FZGVkyph6EEXXo76KhLADYAFgDSCEMcLqczrZtdGQY5rR4dcpDuNw48iCMqgfg6kDJbgAkEAY3OVCaDMMMlJMysm4cjQBM6M9Dw1pqh+wgDG64nM7SflVhGKYPTsLIunHkQxjWt/1qUsgGQAAgYX8uw5wPR2tk3TgaA5gD8NF/jbUuT8gM7rZfVRiGscnRGVnys84x7FprHe4BBMvpbNW3IgzDdM/RGFkyrgscrgPr0DwCWLDvlmFOi8EbWRp2FeB0javOBoDPxpZhToPBGlkaKRAAuO5Xk97gmi3DnACDnFZLowXWOF8DC4ia+1c3jkL64DAMc4QMysi6cTR24ygFcIfjGzFgi2sAazeO5n0rwjBMfQZjZKn2usL5+F7rcAHgkxtHKddqGea46N3IunE0cuMoBNdeq3AFUaud9K0IwzDV6NXI0siBFOfte63LBYAvbhwFfSvCMEw5vRlZqo2lAC770uHI+cDuA4YZPr0YWfK/fgG7B9pyBSClFgHDMAPk4EZW8b8y3XAJNrQMM1gOamTJwLL/tXsuwIaWYQbJwYwsG1jrsKFlmAFyECPLBvZgsKFlmIFh3ciygT04bGgZZkBYNbI0lpMN7OGRhnbctyIMc+5YM7I0TOuDLflMKRcAEh5HyzD9YsXI0gLbPEyrfy4BhH0rwTDnTOdGlpqoSddymca8deNo0bcSDHOu2KjJJuCZXEPjlloXDMMcmE6NLHV08VoEw4T9swzTA50ZWVrwhTu6hssF2I3DMAenEyNLNaSwC1mMVa54hwWGOSxd1WRDsB/2WFjw+FmGORytjSx1qLxtrwpzIC7ArQ6GORitjCy7CY6WK97ChmEOQ9ua7BzA6w70YA5PwKMNGMY+jY0s+fVuu1OFOTCvIT6SDMNYpE1NdtGVEkxvzLkTjGHs0sjI0ovJq2sdPxfgjyXDWKVpTXbRpRJMr1xzbZZh7FHbyHIt9iRZ9K0Aw5wqTWqyi66VYHqHa7MMY4laRpZrsScNLyDDMBb4tZrhfRtKMIPgEsDPbhz1rcdQ2AFY9a0E04gRstUAnyAWRgqW09m2D2Veff/DTeXAbhxtwWsUMAxzfGwATJbT2erQCVd2F9CeXWxgGYY5Rl6jJ5dYHZ/sxJYSDMMwB+A1xC7Oo0MmWsnIUocXr7TFMMyxcwkgOGSCVWuyE5tKMAzDHJBrN47CQyVW1cj6NpVgGIY5MNfUz2SdUiNLrgLeHJFhmFPj7hDrKlepyXq2lWAYhumJ0I0jx2YCVYzsxKYCDMMwPXIBMeLAsZUA12QZhjl3LiBqtCMbwguNLFl3noDAMMypcwlLY2jLarJe1wkyDMMMFCtjaNnIMgzDZHQ+hrbMyDpdJsYwDHMEXLtxNO9KWK6RJd8Eb/fNMMw58qmryQpFNVmniwQYhtgBeIRY35NhjoE7N468tkLYyDI22QC4AfDtcjobLaczbzmdOQC+AfAewvAyZjYQH6VN34qcOUnbMbRFOyOM2wguYAOxUnmynM5S9QLdjAdgDnZVHDv3AOam1ejpXOjGUQIgBU/bVnmCyLdUnqD3YgFeCa8PnicrLKezdRMBuTsjuHGUArhqrNpLdgAWy+ksqBKY/CEBeJzuMbIB4FTZ7oN8/ynaG9oHiO1iVhDbj4whWmPHZJieAHh5+Ubz7EMM653YQeiUKOcm9HdKFaXCZ1NEkZFdobsaxhPE1g/rOpHoBUzQrbFn7HO/nM78qoHdOFoAuG2Y1kcU7N9EZWjeQv6hqPQSU602xTAMbW7eU74HOK2NVxsZ2iJ3QZcGttEXgOJ41Kw8phrJubM+QBqV9myiMrQ4gp2W/SrvyHI6W1FnzI/WNSrm43I6W+RdpHvxaWPOIed7HeRkBb9OpFpbgjdgB/EibFvK8cG90sfEyLJ86Y5Y1YizsKNKJ9zXuZc+NgPU2BUZWBVq0Txa1eaw1J6sYDSyHa5IM2/qLFYhIz1vK4c5GI5F2Y0+3FQOH1qmew/RRP6Ibj/6QYeyDkFSM7xvQYc+qbXgd15NdtSBIpvldBZ2IAcAQL2t913JY46WRYuaXNAgzg6iaTxaTmf+cjpb0J8D4A3aG9vdAGqmdUnrBO7gAzdE7qoaWpvugsCCzMSCTOZ42FQdnWKCPtR1jOIGoj9hkSePjG2bj/+qRdw6PAF4t5zOXi2ns1cQY5XfQehed7zyqkH6SYM4QyeoMlnBppFNuha4nM4S8AD2Y2BkSe6iAxlBxXA7VPT7kt+xqaEtlZ9DHT+n7HxO5InldLZdTmcJ6T6GcIFUerca1rybxBk6FwC+unEUFAWyZWR3Xfhic1hZkst0x6WFdTl3XbifSEYVY1LL71tnyJpG5TRaYJwUIiGDu4AY72qFI3SJ1OFDUWeYLSO7siQXOMzwIKY9Xsfykg5lhSXX7/XZiBVp0ovuNYgDVM+PTY17qRKOR/mYuc5zHeQZWWPggbDtWwGmEk7H8tIOZYUl15MO0ypj3DDeqmK4tKpA1Z1QwLaqvDPEN53MM7LrlomNW8YvwrEomxkuaVeCqOla5DLoLK0KvKaJErZY1wxfVhtvNPvS9o6wA2FkOmnLyNqcszy2KJvpB6csgAUff1qQ1rZrmSX4DeKMK4ZLa8qtG74qY0tyh0RiOmltdAEtZtG1zDFOa9EJRjAquW5jub+VBZlN8RvEmXSsg2RVFqBhrdRrEOeYeMrrmLU5hGtiQaZvQSZjh7RG2LImqO0m9R4tmrbjhvFe10mT8sLWWh7rCmGcBnKbxDkWnlDwEbFpZK+7fDGU1ZSY4fOxao92DeMyb6pMDpOCa6OGMscN49VNM2yRTiEVh1r5DUSf6kp6jyhZAMv2AjFhh7IWGMbybkw+TwDeVF08hPArhvtAq7G1hgy7jYXCxxZk7kFuuL4N1lUX27KcAPe028e2KJDRyDYcI2jiitYKbQXNEf7QWhvGFhsA75fTmdOg7ExqhG3dRKYWUdhWjkHuGO36C7YVwwUt0uiSRd8K9Mz7qhNQbNdkAeC2za6PFPeuM22YrnmAmH4a1o1I2y7XMkxuHCVNa1HKgtc2arGTFnEfqzTT6V0YSsfvudZmdxBrQIRVIxQt2v2E7grjHTVzKi1MLGm5Yj5jn5umC7ZQjXLRIOpbAG/dONpArMpfmj7VMhewu3j0qGG8Haob6HnDNGyxQPVRA13ak77YQfhfV3UiFdVkawmqwFsAazeOFkXz2t04Grlx5LtxtAYb2KGyg2guBS1kJGjnY38N4BPVhnOhD/VPsL86f9ogzhOAcY2Kh3UjVbOz+qos/xWS2soMi0YGFiiuya6balPABYThvHXj6AmiYG7p2ghimEffTn2mmMaFTaOr5+whx09JH/PaH+qGfRJezfCfl9PZvG4c1O+bGNcM79QMv3DjKKkwWSSAqIkfY+d1qzJfZGRT2K1JXuL4mw/nRlcGVspq8sK9qWEERw3k294qZQexKlbYIO4C9XeBdWqm4dUMfwFhPOdFgZbT2ZZchl9ryu+b1mW+yF2wbiqUOUm6NLCAeCnrrg1cefwt8DwVt67RXNQMXweZh2GTyHJzwprRJjXD15UPVDTk9Oze4bjWhC7drLOMXCNrcT1Y5viQOwSsuhJIhmaM6otd39ccfyvT8QC8R7UXu+kSh1Xo5CNF+tXZyuV11VEANHrBanOeVvpycBzb0bzvojyUDeHitSOZJjvDVkLZILOsnH1usSi2atCLXuwn2Ou977oV4KPeu7noOJzOtk7g5XS2Xk5nEwDfodn2N4fgfVd7FJYZ2XUXiTBHzbqDLd1zoVX5HYjapm44HiF8sPOO0plANFf1BWc+00SKbRPZ5GucFwTxO24FbCF8p58rRrkqm75MozCajsFNm0RaTmcr2pxyBPH8h1K7ve9yE9hX3/9wk3uRx6kyaNYLPnioCT0GkLZxjVWYLPOxiZujRvpjZB1iRU393A5DMsA/NlThiT6SnUAjQib0Z2sRnCLu27SaTBSNLgCGtRwc0w/bvhWwQYe+10nBtUebBhZ47jvxgeca9QTmMcFrU3wyamnD5AtXn2oC1dJDACF9QHwcbuiXFZdRmbtg1XWCDHNi+DD7R3c48NKcyu6z30A0vzfIJo6sc6KFaGbA5A642wZxK0G+2wVq7qbbENm5u+1acKG7AABo5tVQ5kszh8dqc/dUILfBBGJs7hrAYugjdKim+FODqI+ouZtvF1hcx6Trjsk9ytwFgGhK2J6SyDBHDXWUhD2rUZdxgzid+yxrkKL5JJYirBlYoNoqXKmtxBmG6ZV1jbDS7eDbUaUcahk46HZo6XubBhZgI8swZ0uNGXHS/xpaVagCpLOHbgztzSHuqdTI0k3xpITzxelbAcYqExR3KH2G5eZ0XZRxwm3s0n3LVeQqU3XR7tSmEsygGfWtAGMPMlhjvJze/Ajgu+V0Nj90B1cVWhrag/qVq3R8AcKhz9u/MMwJoiw849MkjfXQR0YAzyt7eai328XDof3KlWqy1FTQpyIy58GqbwWYw7GczlrNgDs0So22yhjaJxx47DJQb4+vwJYSzKDZ9q0AwxRBhnZSEsz65Ik86hjZxJYSDMMwbaBp0u9zLrdaAKgtlY0sNSGGskoOczjSvhVgmCrQcKw3EHbqkY6drOLWhqodX5IA/ayMwxyeHYQ/dtWvGscFrWjl0c8qe18xHUI12rRnNfYoXbtAx42jFXhvrlNlA7FsXjLEYTu2cOMoALBtu0aDG0chXk5B72zxZ+Y4aWJkfdhZpIHplz7npPcGDQGSm/vV2aRRl+Mj/734S8vp7D/kxBtBDJH0IPo9bpfTGY/kOSHqdHwBePZ7cCE4Lc7SwBpYmE66cTR242juxtGiYIcBv0Dun8qRO4Jo2r6FWPTkGsCfrKYqcyzUNrLEokslmF55ZAP7zBUt//cMLYS9AvAJYpeQH8m9UIeRfkIxsKrrbbOczn63pmxm4DQyslSb5fUMTgO/bwX6xOAeWGi/Q7xcWu+DYQfYdUEyK/UHGfIUL/s2wgIZzJHStCYL2NvZkzkcH7n3G8D+SlTXbhz9FvDsr81bu9TTfi9gnnX0SNtgg2TOIYyubmCfeHH006SxkW2w/zszLHbgWXySVPv9D+i4rSqAPlZ/DsC/gjDajxAfMU/x6a4h3A664d6hfMYSc6S0qckCojY7xD3TmXKCcxqmVUKi/f4NN47CkjU7Qv3Ecjr7veV09jcgXDABgBENefwJwriatnGSW5+s66vNHAO1h3DpUPPnUyfaMIdiB2DMRjYjZ/z3e4im/SOAP66el2NfyaXg0N8YwFWNZK3uLcUMg9ZGFuAJCkcID5DXKBjn+hnC3+rQ758gpm76qGdQdXpbsIQ5LG3dBRIf7DY4Fh7ZwL6E8sS0FcsHiJEDHoD/R2HuwAaWqUgnRpaaO4suZDFW2eHMh2yVMM85fwExRvZ3ITrD7gD8Y4jdBO4hDG+dIY2LqgbWjSOvYAIEcwR04i6QuHGUgBeQGTLsJiihhevrfwD4nzlxnyD8tRcAsJzOXtFkhARZjfgRwEQ1vooLY7OczsYNdGIGQFfuAokPnnI7VO7ZwFYiaRjv1wH80nD+30EY3v8G4L8q5wPsuxyu8HKfrUVDXZgB0amRVVYoZ//ssHgCTx6pStow3gbmcbV/QMdfAPh9ZO+GvloXAPwV+Y8bRwtkQ77WDXViBkDXNVnpn513LZdpzA6Az50snfII4CP9vYfY1XUM4P8awr5S/v/rAP41/W+qiOyA5zVp58r5pI2yTL/UXbS7EsvpLKSCwjvc9o/P4zC7ZTmdeTmXVoZzfxHCTfAL+v233Tj6JYS74FYLGyhLH6qzwpJGijKDoPOarIS2fNB9TMxhea/Om2esszWc+xMAfk87dwcx7vafI9sq5SOEW2CN/c6ze54NdtxYM7IAQEvo8Wpd/cAdXc1wLMSdAfiX2rm3AP4WxKgDQLgH7rBfg92BO7+OHqtGlvDAhvbQ8CLczRmXBSgYt/oHyMbO/hvt2m8BiAxxLiFGFphW+/K5Fnv8WDey1OHigQ3toWAD2w6nSRha3Pu3IUYNXAP48wD+kRLkAsBfBvBPK+rBrp4T4RA1WTa0h4MNbHuqTJedGM4F2u8LAH8B+6MILgD8HQB/t0Q+T30+IQ5iZAE2tAeADWxLakxffatvUwPzMoaXyNwAGwg3wr8F8B+b6MccJwczsgAbWouwge0Gr0bYX9BwK4mpTP+KjncA/juEG+FXhnDMCXNQIwvsGVrTikdMfT6yge0Mr0bYAMCadrAdQ0wp/9/K9R2AfwjRAfZXAfwZOv/HIDZW5OnnZ4KVyQhlSEPrxlEI8/RCppwdgDn77jrFqxH2VwC+h5hQcAtRafhnyLb//qMQhlgdNfCfIabO/i+I8bAmFwNzYhy8JqtCNbCPfepwpGwg1iMN+1bkVCjZNNHEnwXwO8rvKwB/D2L861sAv6nJ+236zYb1zOjVyAIA7dD5DryoTFUeADg8VbZzJjXDX0BsnPj7AP5PSdjfAfCnkU2tZc6I3o0sANB4QA/cIVbEDsDNcjqb8GIvVnAaxLkA8BsA/gmKd27+L+Aa7NkyCCMLPK/e5UHsqcTsI7crCfpW5IQJW8T9JcyLwxRRNzxzpAzGyAKiQ4wWlnkDdh8AWe2V3QOWIf+2vr5AFeTMrLRmvG2DtJgjZFBGVrKczlKIOeTnXKu9h/C9Bn0rci4sp7O/CeBbFDf9JTsAbzrsfGRX2YkySCMLvKjVnlMBfIR4eXlxkB6gPPe10zu8LIMrqgw0Za39TpT/ty3kMgNjsEZWspzO0uV05kCsQH/KLgRpXL2WLy/TEupYVCcLBFQGuyx/64Jrqw7TYXpm8EZWQs2yMcS42lMytg9g4zpEVoZzifL/uKX8bcG1dUvZzIA4GiMLPLsQFsiM7bFOTdxB+Ju/pSFZac/6MC8JDOcS5f86Q7JW+m9DR2aakw5z5ByVkZVIY0ub173H8ayD8ADRGz1aTmdz9rkOF/rw/XuIshXQuQTVWlG6/3ar/V7TUVYSdpTeE8RaFHp45ojpZe2CLiE3QkiLdEwgOi0u82MclB1EDSUBkPDLc1wsp7PfNJwOINYq0PevWyv/byEMqKm2u1NqsX8fwBS0xQz5fZkT49X3P9z0rUPnKAbXg5hHfkgeIQxrym6A08SNI980dMuNoz+kf2XL6gqiduoD+JHO8bKUZ8ZJGlkdWvzDob8xqq1+X8YOwtf2/McTBs4bN44SiI/6DbIP/P1yOvPdOPIBrPnDe36chZE1QQsuO/TTgVjjs4gVRDNwy8aUMeHG0V8D8OvL6Syg1pQHdhOdPWdrZBmGYQ7BUY4uYBiGORbYyDIMw1iEjSzDMIxF2MgyDMNYhI0swzCMRdjIMgzDWISNLMMwjEXYyDIMw1iEjSzDMIxF2MgyDMNYhI0swzCMRdjIMgzDWISNLMMwjEUqG1k3jka0PKD8PbahUJeo+vaRtpZfvenSFfo9Ga6Pq4ZlTgf9ufenyTCptNQhZVxKPz2IXQfuIParCq1o1hI3jhwIned1daT7nUCsHZso8iYQ64OuKsRP6acHsVB4CmCxnM6COroMBeWeVqaV/WlR6juIPdcSKPdvWk+V8tMHEC6nsxXJ9wBMeOeA48GNoxDZLiRrUBmBeO+2vSg1ME7ZXeAAuEC2MHcd5hAGQ40bQOztNGogb9xCl6Ewpj+nRm1lhPz8+hHAB+W6A+ALgOtG2jFDYAQqI71qMTAqGVn6InmgWgnVDL8dai0WeN5g8bvldDbvIe0t9vMrIV38Q+vSFVR7d5BTM1XLhHL/Du/Ie9pQmXaW09mKnrWDnDJyrlTerVbPtGN4efrcJsaQX6t+NOmOsmeuXueX7HzQnvs6P+R5csruAoZhmN6pVJNVttgeGS6vi9wGSidSmveVk2HK3A9uHE0gOl6McrT0HPpbQTjkk0N9ZZVN9MaGy4X5RfEnMNwnyZUyV4euLcpyUNZ5R/pvh7gza5dl7Rig+3Do5xYV3oMaeTQCuYVM15fT2aKCbqV5rLzTYzq1xgE3qFTsn4OsE7uyDqVG1o2jBUSHTx6PAMKC6z/T8Q0pVhQmV44bRynEVt65ctw4mgNYQHQySeT235/cOPpY9uDbovSy51GYX6b7pJ74ANpW5m4cfYYYsbBtqm9VaFv1r/QzKAiXQuj5EdkIgyHRSVkbOspokEvt0sKNo7IRN1XyyCH5F3lhIN7FvPgpKuQxpZMAeK1dCtw48my64SgPFxAdtCryPaykQ6G7gL400sDeA3gHkSlv6PdgoKEknyAe+gbADYSeNxCGDQBu6aNhSwcPmYF9wH5+NdoWWHlZ5IN9BPBE/39A8QcuT+b4GMY5m6Dxt5O+9TgCUggDu4P44Mn3tcgoVkIpkxcQZfE9snL+pq18QzqvId7pj8je5SbyvKojY+j9SJEZ2Htk9/kZIl8vAKT0IcilrCa7oONnvZeeDMqQSCGG/9xozdkU4osT0vW5G0eBpdrfnI4Py+lsol5w46ipzAWyD4cnm1ZKjfktfU3TIiFUuAIoQ6TcONpBGOmD1IY7IoF4pkmvWgwYKhvSwI7ls6UKhiPHfrfAx36Z3GrptxT/zByZIfeU+/Ag3FGrMgEUNoBSo3fjaAMxjjcpiLql4wbCdaKmlVJeriA+AAsId4KR3JosvZRSsaBAmUGgDCEKcoLMkX19JpbUeEvHRYcyJ1Km1osbIvuqT1BOiszAbpDlxQccicEid9BVWTgGHh1D1QAup7N1BwYWyMqbrcqKxDOls5zO0hoG9isyOyZbgK8BfClqEWnDEF+kRdcX9PNtUQ25yF3g0HF3LM7/Ij0pU1L66XWdttpk6NhPJH1RqeGaPOcYrj1DxknWbN4sp7PxcjobQTR/AODqSJrgo74VOBLGdNxaku/QcWVJvkR+UNcN4wd0fALwzXI6cwB8g8x1EhZFpjHu24LranwnL1yVIVyrCmGOhRUdxxZkj0qut0oz5wOyqhh9QsdQdStQIXnQwjBMGbl+3aH4+kkPWYOdSGNJxzmdv+jA7Slrx7lyqhjZUUslhsS2x7THFmRuK4aTNYLEcG1Fx3E7VRgGwHDK0ZiOL1riZGilq81pmc62LECRkZWR9SEgknE9XQbB6hCyc/wzpnMmHNNJizWElI4jS/IHw1BqWUOmYh7J2tvIcM10zkTVcE3x6LgqCTeyqgUKjCz5FXfAc2/lM8ogZKDgS6D5KdNmKj6nJ2tjk6ZyaiDT2FaNQF/HjRbfJDN3gRUq4LIptqajLNB+VV00mSZdVMZ0vCx5wTxFZlE4R5Nr0slRfq4KZOUxaRAHyO5hUxTozPHoWJRHKzpODNeez+U1xbWmvDFMBzgVw9lK/5kyd0FCx0BmGGVQgKxD5sKNo0R/8ehFCulnm7FtY+x3+vi60e8KGoMZIisASU0RIR0DadwUmc/5BSDMyS+Z3qPSxJEy53Xvm55ZqJwaGYKpeiSmMX+U7lwLN9bCjN04SpB9JK7dOJrrHxS9XNTsnZbxLt04CmusBiY/NoEmh1GokUfy2t4zpg5WdRW1Z7uhpOFg/72qXa6LoPdtgWykT95olLG87sbRok5ZqkvherKU8Br5ju57lC9Nt4MY47YqSOcPS2RIOSmyzLPN3lq56gyVvFp5wSwbSaP8cuNoVSCzDo/L6cxTT7hxtIb4AMghXUXIWnWZLrXvU51RtpzOXuVFcuMowMsZOHXYG3OZk0aK8x4qViWPQuQ/4weIGmJRedpBGNtDLG2pv8sestmLXZE7m7SwJkuZ7EC8NDvl0gOEsfEhZjWZaqo7imccZ1aDHaXn0QD/d8hedhs8AnjXZBlHZWxdUX69Qdajr1KUXx7EbJe6zVwpUx2qldDMF49qntLASr1NacjZNh7M9yfRy4XpObUqFzQp5n2O7CKe7+GIJl4cmsp5RM9YL5NPEAZtArPdAPbfZx/NnmUZT9if5Ra4ceRTmfehtBiR/z52RqWdEWxStQbDvESpTdyXrVVbUgMc7A4XfeDG0RaiFpbbamGGT0nLcgPxod/a1mMISx36dGzstz1H3GxlIqBC5xHVAN9AfN0f6e8eA198/dBQTecCaNdZy/SP0rK8QVbmH+n3QQwsUGPR7raQU3xvmh8VaOmTCQ+lyzFBnREjzac0gmjyXEA0v8KXMV9CRiPtVMEjhcre3vKbbrbaGTCwBZCYZpC9CdDj0gCdG1kqqL5cUEbpOXQA/OzGkayxjpH1uD+aalPUxJUb7e3JPRWUhVvmy+lsK/NLyY8UwNqNoztktX21U4Y3rFNQy0yF4D+5cfQEMVRvhKxZuUO3608MGsM7G6B6HtZJ51nuMb7P+rtaNZ4Nd0EC4AM5mscQK0XdAfgXEEbiiv5kh8tnGMbbkbFRFy95lmtB5z5JIGrzgZpfcoiU8iV+QpZ3gPApNeqgO1UMZSYXZUrxGCJPpYF9wPntTZYge2d9WFg06ETe5wD0rtaJZMNdMIH4QoUA4MbRewBYTmf/CTTwV47FLPpSLqezUBtTuSf3hPAhak2yJivzay0D0NAQOZbPgdhdYQ1mD0OZKQs/AbIdJ87YBzvB/jvroGP33Ym8z3PtWIneRxcwDMOcMkMYXcAwDHOysJFlGIaxCBtZhmEYi7CRZRiGsQgbWYZhGIuwkWUYhrEIG1mGYRiLsJFlGIaxCBtZhmEYi7CRZRiGsQgbWYZhGIuwkWUYhrHIwRbt7grarsaDWHA5PUB6C+B5JSzmwNAKWT4O9LwZpmtyjSwV7pB+TvRFamnF/jnEsnu+DeVy8ADc0v9pG0G0lqWP/UWwNxALCy/ot0xrAcvQUoYhgEXXCyZr6TjI1sRU16ddQ2xlEwxoKcUxOnre5whtljmC+EgtelWmIoaF67uQ6UC8w/6hF7nPdRfQS7aGeAnnhiABXUs718oytDf7CmKB7CuIxcQ/I9u1ctSPZvAgtjxfqCfdOApom+quGEHct4Ns36M1/f4AsWNA0GF6TAvcOBq7cRTWfSZkWN4i/x0eHMruAwH9Xzd+3rviQ+SF31i5hpT5ZBd0vJUr9QPPX5rXyNk2ZshoO1g+QGwk6C2ns/lyOpssp7MxetoPaDmdJRA7pE60Sx+wX9vuihXdu/wbQWzRvINYtX5hIU2mPmOIFfmdmvF8Om4AXFDrc9Aomx823brd+K7IreSX01nQXLtmFPpkl9PZ2o2jjxDNtQWyh7ag41yGJSPsQRSIFUTzZKvKI3/qlvb48SmNULk+IhkORM0qLWq2auGNaRqYQxjYR4MxA+lkTFO5RwBITGlR7cGDqC2uyHDqOjsQ97cFbb1DK8ePpAzKIxlWxpVpr0j+GIZdEkgHmf4LHYsgPdYQ27TfunEU5DxHj/RPtM0IPZKTanGe70W9ppcbPb+KqFJe5K4HyHb0leFXKC+jExlW1YvOj6HduybHQVYOEt39I5/RcjpLSccJXdLz00FWBkZ5+ZuDlDkH8IV+J6aA6r3CnC8OxTde18LI+1jlKaY89xFE/qbK5VFOHI90HEHz0SvPWQ0Lkr2l62s3jsaGMjIivccQ5ejFu62VIxkepMfKpK+kyuiCAKJmc03NFh+iFnsvhVMz5ieI5vctxANdy21mFL5CNANWFNZXbsKHuMEvJOMOxc1WRwv/BcDKkKaOTHNREm4P0k/e4x0M90f39SOAT1InN46ksVT1/gryZ2M/H+S1QPst+Up/jnItNaib0LVxlXvTocIrXScTeV5xs3yFuL9PEM/IV6KHAL4aak0TZPct5fnQyo0hv4yQ/DXKy4uP/fxWy0teGQ3pPp/DUnPdceNoS+dN9y51C7FfDn6kcyoBRD7JPPiUIzOg84CoHMgyUAjd12uI55jS6UlO2BT7+fKz1nKV96Ned5TrI6Xs3yr3nOrPksKmyJ77J8qHRAn24h6VD7/M06+aW8BH/ruiXvc1uT6An5GVQflu74VT4gfYf14/lrX4So2sspGfTGgBYXTnSrAUwqf5DsA3AD5CbFcd4CVy07rPoI41+urc0fX3JOMNsmbrXBcC4V9ZUbg3EIXpNco3gHtN95WWhNMJSDeZlun+Eoh7/w7iHu4h7nVhkPeBjh+Rv5/SitKTyHuVNasNgNdagXcg7vGpZeeZjDtWzqUQ93OznM5eQdznBsrGj8jyZKLJk79D0tODeOZPEC6bVwBuSH5SpBjd4xeIZ3CDrLxs8NLNkdLxFsLIvsP+MzSldUnHd/S3g2iuS1nvIZ4boJUBSvsa4tl/g6wcXGt6bel4R7LeKDLV/JzTPQIir2QZKMOno6yVPcDgMiBjckX3eANxvzeytkfhryn4e7r+UStbKUSe3QP4lv4eYO6zSen8E7JncYNyF11C4b4j+U8ArhRjGCLnXckTSPd2B3Hv76gMvqfLdznulWsI2yX1BjR3qk6lIVzL6WxBN3NLp27U6jS98IkSZUGGMc+PeKP5RuYynroVNt2krIWo4QHxQqmjHlL62r1242hianYqTYhH/VoFJtIw01f7Z2j3p/feKi+cUybTBN1b6saR/K2HDSGeyRzZSyWPQZ7cJtCzuIRowQSkz4qe8xdkH+AE4gs/UeKOID6KG+W5zOk4kS/0cjoL5EvvxtGowNUh435UylFKcWV5WWhxNtj385WVl4liaBZ0T1s6v6LzEwCXbhx5yrOZ0336yv3PIcrBRNFrBZEn90q5Sd2ss8pDtn32iK5va1QOJnRMlONbvHQZjOkY5PgrHTreK+/mc3zK80sI95uvpk/5+5w/Stin5XTmKGHTknuRPtVnKE+/0v2EsqO+4F0xEUhdZXhylwHC+M7x8iP8oOgin5d8tgEM1Bknu6CEN6aHQQbMh3hoDkQtIY9Q++2ZztODkbU13ZcSGl7CEMLoODDXUGR8p0A3I+pDIx/PI4QxUF8wWegmyHrw83jqYNxnCHG/E+Wc/D9pKVvHkf9oNbIxHT3g2Y//AOCtYrykTqES7y1EDcKXL4YhvTRHFykvUE9SeXmCeLEdvbZVp7xoZU3K0f2MKbJar3wHLiBe9oWW1k4Nq5Bov1cQeTM2hK2E2poB4FD+bunyRAuegpr4VBsLtHsM6fo1yQm1cuso4XQSiBabR+l4dD6och86yrs1RpaXo4ayRhB5tDG8hwmykUc6K+33ukyPOjO+1trxGfKDya/KFiITN3mCDIX9Iue8mt64kpYFKC/ORVH1vinkI7pD5i/+WBB82zY9uh/ZDPSVl+u+g7GADh1X2vlrZH63W2RNSZWQjhPtGGrhLjRZtzAbIp2i8iLPjbTza0PYVYW0TLLzfksu8fK+8iodeTLa4Ct6SN/kFzq35zIgA/MO4n29huY/pjKmXv+q+ZcdOq4Nemy13+OCsLm4+0MuHQiDfV9HhgEnT5cO3p09Ws/4ohf7A8RDcKSC9FV/XVOWqYk4puO6gohRhTAPyMbLLSopVgHFt/Wgjlpw4+g2L05HhMiagQ6dS9oIVJqsO7ysTb4rGwGwnM4SN452EE3GEcl6NPTEb5ZiyFxddqAPpUGmlLfVzo8McpwGaVfhfnnYCTo6Ezq+w34+eBAG34dSRqS7j8pwAFFrTeRzVq5PIMrbtRtHKbkPVsjGXKeaHiPt95rCjmvej4/MVeUDz/bF9IGvyoqOjn6hSsdrHbpYu2BEx1QxsCPUK8CyJ3uunqSHKqv0ay2Or4UdoVpTOaDjralnuAVjOq4UncamgF2idIBJQ7spM4JFkIFN6ac6fGtNx3lFUSFE7S1Ufqs8QbiBvJoqAtnz9dWTyod9Y+j0mxheHhk/QTfINE1pHQSt4zNZTmep/ENW9t+a9COjKcM4husJsjwb03FFR18NS/LluYSOKR0XNfNnQsdQOVcn/guoXG9gHj88p+MDOqCLtQu2dJxQId9C1BAvgNzaqU4AYSRuXTFEZgXxEAO6PjfEeU3NcxlmgWyCxCovIfLbfYaofd+RoQ0hjMgI4mu/WtafZLGl44SGo4yR1ZSLfLNVkP7fBURB1ce/hhA1lNcodlHojBUjN4a4d1k7UDtkZIfAnPRIKM0taMygoeYWQuTxWwA7Q34uIJqwCbmbUkWPbcmHIiA9b8lPmEAYhUCRrfNaSWuLiuWlDuSrl2VrRc9rTZcdVBhTmcOzDDIIRR1gczqGOfrJltwEYqiaD/HcEyjjtkHGk9KbKNcXqk5KubikchHQ9QDCBjwo95wgG6ee0rNYU/rrgnduBZq1Rp1pjun+CNmHM6d4RWPF5xBlUN6DlC1bn4uceLVoXZOlDLyHyNCvEGPlHGQ9+E4FGSmymUafSM4dXX6f88LdkOwv9HdJaU4qpDdH5me6orSk3+pDFRkGQoja2SVEHnyBKJRPDWTpBBB5c4v9sX9q2qb/y3iNzGd3B2G4niDy3DeE9yDy+C3E/ck8u9Zr7VQu5L2/0ImeqRwuI+9L6mFKW5cth1bdQuS3Wl5epAdRK3EUva9QsbzUgcrWZ4i8leXqK0S59hrKXJPMC2T65zGhY5JzXZ6fKMdrRa5slstwnuH6g5bHHrJy8VUNB+VZkrGbUNhLZPlzi+JnHiBrrf1EuuTd3wL7dsTJE6qVQanLJ2RDulYFOlWmTk12BTE2bKtfWE5nPn2VRvQ7dV/OtAEKxvfRFzHBfqaYvkIhqDZH/8vw2zqZoviZHOw3PXQ5eTrPKd6K5G0hahqeKscgf4WcfMy7RrqO3P0ZXyoTOt4b3ComZDp7lI12oHv0TPeUU1uY4GUZUOWZnrme/1LXtRY3wX6eFOkh5fgoLy+m523UAftlUdVtTu/DWDm91kfHmOIq5/fSypFpYkLhdV0lCbLZhlhOZxPtee7pSR+NuV6uNd22eFku9PuVYdeGsHrZe6PHcfdnvsl3K8TLd0UvU1LXEOZ8fVEGc94DY/yC88+8+v6Hm7xrzBFAhV/WbL6taGTPBiV/Pi6PZBUq5rTgRbuPGGXoHKDM0mEYZjiwkT1uPAhfVS+rCzEMU87R7YzA7DHh2msx5F971bcezPnCNdkjhg0swwwfNrIMwzAWYSPLMAxjETayDMMwFvn/ci+v7HzAu7kAAAAASUVORK5CYII=" alt="شعار يعرب">
+</header>
+<section class="hero">
+  <div class="kicker">القدرات المؤسسية</div>
+  <h1>القوانين والأنظمة والسياسات</h1>
+  <p>الإطار التنظيمي والسياساتي الذي يحكم عمل جمعية يعرب</p>
+</section>
+
+<section class="ar-shelf" aria-label="الوثائق">
+  <div class="qa-head"><span class="qa-kick">٤ مجلدات</span><h2>خزانة الوثائق</h2><p>اسحب المجلد المتاح من الرف لتفتح أرشيفه.</p></div>
+  <div class="shelf"><div class="shelf-row"><button class="vol off" style="--i:0" disabled>
+      <span class="vol-top"></span><span class="vol-t">النظام الأساسي ليعرب</span><span class="vol-s">وثيقة التأسيس والإطار القانوني للجمعية</span>
+      <span class="vol-tag">قيد الإضافة</span>
+    </button><button class="vol off" style="--i:1" disabled>
+      <span class="vol-top"></span><span class="vol-t">النظام الداخلي لموظفي يعرب</span><span class="vol-s">حقوق وواجبات الموظفين والتنظيم الوظيفي</span>
+      <span class="vol-tag">قيد الإضافة</span>
+    </button><button class="vol off" style="--i:2" disabled>
+      <span class="vol-top"></span><span class="vol-t">النظام الأساسي للمجموعة الكشفية</span><span class="vol-s">الإطار الكشفي والتنظيمي لمجموعة الظاهر بيبرس</span>
+      <span class="vol-tag">قيد الإضافة</span>
+    </button><button class="vol" style="--i:3" onclick="openModal()">
+      <span class="vol-top"></span><span class="vol-t">الأنظمة والسياسات الداخلية</span><span class="vol-s">٤ أنظمة رئيسية و٧٠+ سياسة تفصيلية</span>
+      <span class="vol-tag go">افتح ←</span>
+    </button></div><div class="shelf-board"></div></div>
+</section>
+<div class="stage">
+  <div class="cards-grid">
+
+    <div class="main-card inactive">
+      <div class="mc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.5h9l4.5 4.5V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1z"/><path d="M14.5 2.5V7h4.5"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="16" y2="16"/></svg></div>
+      <div class="mc-body"><h3>النظام الأساسي ليعرب</h3><p>وثيقة التأسيس والإطار القانوني للجمعية</p></div>
+    </div>
+
+    <div class="main-card inactive">
+      <div class="mc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div class="mc-body"><h3>النظام الداخلي لموظفي يعرب</h3><p>حقوق وواجبات الموظفين والتنظيم الوظيفي</p></div>
+    </div>
+
+    <div class="main-card inactive">
+      <div class="mc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 5-3.6 8-8 9.5C8.6 20 4 17 4 12V7l8-4z"/></svg></div>
+      <div class="mc-body"><h3>النظام الأساسي للمجموعة الكشفية</h3><p>الإطار الكشفي والتنظيمي لمجموعة الظاهر بيبرس</p></div>
+    </div>
+
+    <div class="main-card" onclick="openModal()">
+      <div class="mc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M7 3h10"/><path d="M4 8l3.2-4.5L10.4 8"/><path d="M13.6 8l3.2-4.5L20 8"/><path d="M4 8a3.2 3.2 0 0 0 6.4 0"/><path d="M13.6 8a3.2 3.2 0 0 0 6.4 0"/></svg></div>
+      <div class="mc-body"><h3>الأنظمة والسياسات الداخلية</h3><p>٤ أنظمة رئيسية و٧٠+ سياسة تفصيلية</p></div>
+      <div class="mc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <div class="modal-close" onclick="closeModal()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </div>
+    <div class="modal-title">الأنظمة والسياسات الداخلية</div>
+    <div class="modal-sub">اضغط على أي سياسة لعرض تفاصيلها</div>
+    <div class="arch">
+      <div class="arch-top"><div class="arch-count"><b>٧٣</b><span>سياسة في ٤ أنظمة</span></div>
+        <label class="arch-search"><input type="search" id="archQ" placeholder="ابحث في السياسات..."></label></div>
+      <div class="arch-drawers"><button class="dw on" data-k="0"><b>النظام المالي</b><span>٢٣</span></button><button class="dw" data-k="1"><b>نظام العمليات</b><span>٢٢</span></button><button class="dw" data-k="2"><b>نظام العمل الإداري</b><span>١٠</span></button><button class="dw" data-k="3"><b>نظام العمل البرامجي</b><span>١٨</span></button></div>
+      <div class="arch-cards"><div class="ix-pane on" data-k="0"><div class="ix" style="--j:0"><span class="ix-n">١</span><span class="ix-t">سياسة الصلاحيات المالية</span></div><div class="ix" style="--j:1"><span class="ix-n">٢</span><span class="ix-t">سياسة الإيرادات والقبض</span></div><div class="ix" style="--j:2"><span class="ix-n">٣</span><span class="ix-t">سياسة النفقات والصرف</span></div><div class="ix" style="--j:3"><span class="ix-n">٤</span><span class="ix-t">سياسة القيود المحاسبية</span></div><div class="ix" style="--j:4"><span class="ix-n">٥</span><span class="ix-t">سياسة إدارة الإيراد</span></div><div class="ix" style="--j:5"><span class="ix-n">٦</span><span class="ix-t">سياسة إدارة الإنفاق والمشتريات</span></div><div class="ix" style="--j:6"><span class="ix-n">٧</span><span class="ix-t">سياسة بدل المواصلات</span></div><div class="ix" style="--j:7"><span class="ix-n">٨</span><span class="ix-t">سياسة السلف المالية</span></div><div class="ix" style="--j:8"><span class="ix-n">٩</span><span class="ix-t">سياسة إدارة المخزون</span></div><div class="ix" style="--j:9"><span class="ix-n">١٠</span><span class="ix-t">سياسة العطاءات والمشتريات الكبرى</span></div><div class="ix" style="--j:10"><span class="ix-n">١١</span><span class="ix-t">سياسة التوأمة مع مؤسسة الحراس</span></div><div class="ix" style="--j:11"><span class="ix-n">١٢</span><span class="ix-t">سياسة التخطيط المالي والموازنة المالية</span></div><div class="ix" style="--j:12"><span class="ix-n">١٣</span><span class="ix-t">سياسة إدارة الحسابات البنكية</span></div><div class="ix" style="--j:13"><span class="ix-n">١٤</span><span class="ix-t">سياسة الرواتب والأجور</span></div><div class="ix" style="--j:14"><span class="ix-n">١٥</span><span class="ix-t">سياسة إدارة الأصول الثابتة</span></div><div class="ix" style="--j:15"><span class="ix-n">١٦</span><span class="ix-t">سياسة إدارة الأصول غير الملموسة</span></div><div class="ix" style="--j:16"><span class="ix-n">١٧</span><span class="ix-t">سياسة التقارير المالية</span></div><div class="ix" style="--j:17"><span class="ix-n">١٨</span><span class="ix-t">استخدام نظام المحاسبة</span></div><div class="ix" style="--j:18"><span class="ix-n">١٩</span><span class="ix-t">أحكام عامة</span></div><div class="ix" style="--j:19"><span class="ix-n">٢٠</span><span class="ix-t">سياسة عمل صندوق الحماية الطارئة</span></div><div class="ix" style="--j:20"><span class="ix-n">٢١</span><span class="ix-t">سياسة عمل المساعدات المالية والغذائية</span></div><div class="ix" style="--j:21"><span class="ix-n">٢٢</span><span class="ix-t">سياسة عمل الكفالات الشهرية</span></div><div class="ix" style="--j:22"><span class="ix-n">٢٣</span><span class="ix-t">سياسة عمل المحفظة الإقراضية</span></div></div><div class="ix-pane" data-k="1"><div class="ix" style="--j:0"><span class="ix-n">١</span><span class="ix-t">سياسة عمل العمليات</span></div><div class="ix" style="--j:1"><span class="ix-n">٢</span><span class="ix-t">سياسة مصالح العمل الحيوية</span></div><div class="ix" style="--j:2"><span class="ix-n">٣</span><span class="ix-t">سياسة آليات عمل العمليات</span></div><div class="ix" style="--j:3"><span class="ix-n">٤</span><span class="ix-t">سياسة عمل المكتبة</span></div><div class="ix" style="--j:4"><span class="ix-n">٥</span><span class="ix-t">سياسة الأداء الوظيفي للإعلام</span></div><div class="ix" style="--j:5"><span class="ix-n">٦</span><span class="ix-t">سياسة فتح المقرات</span></div><div class="ix" style="--j:6"><span class="ix-n">٧</span><span class="ix-t">سياسة التواصل الداخلي (واتساب)</span></div><div class="ix" style="--j:7"><span class="ix-n">٨</span><span class="ix-t">سياسة العقوبات</span></div><div class="ix" style="--j:8"><span class="ix-n">٩</span><span class="ix-t">سياسة التوظيف</span></div><div class="ix" style="--j:9"><span class="ix-n">١٠</span><span class="ix-t">إجراءات تشغيل الدورة البرامجية</span></div><div class="ix" style="--j:10"><span class="ix-n">١١</span><span class="ix-t">مهام المراسل</span></div><div class="ix" style="--j:11"><span class="ix-n">١٢</span><span class="ix-t">سياسة المتابعة والتقييم</span></div><div class="ix" style="--j:12"><span class="ix-n">١٣</span><span class="ix-t">سياسة نماذج المتابعة والتقييم</span></div><div class="ix" style="--j:13"><span class="ix-n">١٤</span><span class="ix-t">سياسة الشكاوى</span></div><div class="ix" style="--j:14"><span class="ix-n">١٥</span><span class="ix-t">سياسة استقبال المراجعين</span></div><div class="ix" style="--j:15"><span class="ix-n">١٦</span><span class="ix-t">سياسة المتابعة البرامجية ومخرجاتها</span></div><div class="ix" style="--j:16"><span class="ix-n">١٧</span><span class="ix-t">سياسة إدارة الخط الساخن</span></div><div class="ix" style="--j:17"><span class="ix-n">١٨</span><span class="ix-t">سياسة الاجتماعات</span></div><div class="ix" style="--j:18"><span class="ix-n">١٩</span><span class="ix-t">سياسة الظهور الإعلامي</span></div><div class="ix" style="--j:19"><span class="ix-n">٢٠</span><span class="ix-t">سياسة حفظ البيانات</span></div><div class="ix" style="--j:20"><span class="ix-n">٢١</span><span class="ix-t">سياسة عمل الاستوديو</span></div><div class="ix" style="--j:21"><span class="ix-n">٢٢</span><span class="ix-t">سياسة عمل مختبر الحاسوب</span></div></div><div class="ix-pane" data-k="2"><div class="ix" style="--j:0"><span class="ix-n">١</span><span class="ix-t">سياسة تعريف العمل الإداري</span></div><div class="ix" style="--j:1"><span class="ix-n">٢</span><span class="ix-t">شروط ومعايير عضوية إدارة يعرب</span></div><div class="ix" style="--j:2"><span class="ix-n">٣</span><span class="ix-t">سياسة الفريق المركزي</span></div><div class="ix" style="--j:3"><span class="ix-n">٤</span><span class="ix-t">سياسة الهيكل الإداري</span></div><div class="ix" style="--j:4"><span class="ix-n">٥</span><span class="ix-t">سياسة الهيكل التنظيمي</span></div><div class="ix" style="--j:5"><span class="ix-n">٦</span><span class="ix-t">سياسة توزيع المناصب</span></div><div class="ix" style="--j:6"><span class="ix-n">٧</span><span class="ix-t">سياسة التخطيط</span></div><div class="ix" style="--j:7"><span class="ix-n">٨</span><span class="ix-t">سياسة التواصل الشامل</span></div><div class="ix" style="--j:8"><span class="ix-n">٩</span><span class="ix-t">سياسة الحماية والإنقاذ والمخاطر</span></div><div class="ix" style="--j:9"><span class="ix-n">١٠</span><span class="ix-t">سياسة تخريج السياسات</span></div></div><div class="ix-pane" data-k="3"><div class="ix" style="--j:0"><span class="ix-n">١</span><span class="ix-t">باب المسميات والمفاهيم</span></div><div class="ix" style="--j:1"><span class="ix-n">٢</span><span class="ix-t">باب آليات العمل البرامجي</span></div><div class="ix" style="--j:2"><span class="ix-n">٣</span><span class="ix-t">باب الإرشاد الاجتماعي</span></div><div class="ix" style="--j:3"><span class="ix-n">٤</span><span class="ix-t">باب التدريب</span></div><div class="ix" style="--j:4"><span class="ix-n">٥</span><span class="ix-t">باب قسم الأنشطة</span></div><div class="ix" style="--j:5"><span class="ix-n">٦</span><span class="ix-t">سياسة البيئة الآمنة</span></div><div class="ix" style="--j:6"><span class="ix-n">٧</span><span class="ix-t">متطلبات تطبيق سياسة حماية الطفل في البيئة الآمنة</span></div><div class="ix" style="--j:7"><span class="ix-n">٨</span><span class="ix-t">باب الفعاليات الكبرى</span></div><div class="ix" style="--j:8"><span class="ix-n">٩</span><span class="ix-t">سياسة الفئات المستهدفة</span></div><div class="ix" style="--j:9"><span class="ix-n">١٠</span><span class="ix-t">باب نظام الحوافز</span></div><div class="ix" style="--j:10"><span class="ix-n">١١</span><span class="ix-t">سياسة حماية الطفل</span></div><div class="ix" style="--j:11"><span class="ix-n">١٢</span><span class="ix-t">سياسة اختيار المستفيدين من البرامج</span></div><div class="ix" style="--j:12"><span class="ix-n">١٣</span><span class="ix-t">سياسة الحماية والنوع الاجتماعي</span></div><div class="ix" style="--j:13"><span class="ix-n">١٤</span><span class="ix-t">سياسة المتطوعين المساندين</span></div><div class="ix" style="--j:14"><span class="ix-n">١٥</span><span class="ix-t">سياسة إدارة الفريق</span></div><div class="ix" style="--j:15"><span class="ix-n">١٦</span><span class="ix-t">سياسة الاستقطاب</span></div><div class="ix" style="--j:16"><span class="ix-n">١٧</span><span class="ix-t">سياسة التسمية</span></div><div class="ix" style="--j:17"><span class="ix-n">١٨</span><span class="ix-t">سياسة عقوبة التقصير</span></div></div><div class="ix-pane ix-res"></div></div>
+    </div>
+    <div class="pol-cols">
+
+      <div class="pol-col">
+        <h4>النظام المالي</h4>
+        <ul>
+          <li>سياسة الصلاحيات المالية</li>
+          <li>سياسة الإيرادات والقبض</li>
+          <li>سياسة النفقات والصرف</li>
+          <li>سياسة القيود المحاسبية</li>
+          <li>سياسة إدارة الإيراد</li>
+          <li>سياسة إدارة الإنفاق والمشتريات</li>
+          <li>سياسة بدل المواصلات</li>
+          <li>سياسة السلف المالية</li>
+          <li>سياسة إدارة المخزون</li>
+          <li>سياسة العطاءات والمشتريات الكبرى</li>
+          <li>سياسة التوأمة مع مؤسسة الحراس</li>
+          <li>سياسة التخطيط المالي والموازنة المالية</li>
+          <li>سياسة إدارة الحسابات البنكية</li>
+          <li>سياسة الرواتب والأجور</li>
+          <li>سياسة إدارة الأصول الثابتة</li>
+          <li>سياسة إدارة الأصول غير الملموسة</li>
+          <li>سياسة التقارير المالية</li>
+          <li>استخدام نظام المحاسبة</li>
+          <li>أحكام عامة</li>
+          <li>سياسة عمل صندوق الحماية الطارئة</li>
+          <li>سياسة عمل المساعدات المالية والغذائية</li>
+          <li>سياسة عمل الكفالات الشهرية</li>
+          <li>سياسة عمل المحفظة الإقراضية</li>
+        </ul>
+      </div>
+
+      <div class="pol-col">
+        <h4>نظام العمليات</h4>
+        <ul>
+          <li>سياسة عمل العمليات</li>
+          <li>سياسة مصالح العمل الحيوية</li>
+          <li>سياسة آليات عمل العمليات</li>
+          <li>سياسة عمل المكتبة</li>
+          <li>سياسة الأداء الوظيفي للإعلام</li>
+          <li>سياسة فتح المقرات</li>
+          <li>سياسة التواصل الداخلي (واتساب)</li>
+          <li>سياسة العقوبات</li>
+          <li>سياسة التوظيف</li>
+          <li>إجراءات تشغيل الدورة البرامجية</li>
+          <li>مهام المراسل</li>
+          <li>سياسة المتابعة والتقييم</li>
+          <li>سياسة نماذج المتابعة والتقييم</li>
+          <li>سياسة الشكاوى</li>
+          <li>سياسة استقبال المراجعين</li>
+          <li>سياسة المتابعة البرامجية ومخرجاتها</li>
+          <li>سياسة إدارة الخط الساخن</li>
+          <li>سياسة الاجتماعات</li>
+          <li>سياسة الظهور الإعلامي</li>
+          <li>سياسة حفظ البيانات</li>
+          <li>سياسة عمل الاستوديو</li>
+          <li>سياسة عمل مختبر الحاسوب</li>
+        </ul>
+      </div>
+
+      <div class="pol-col">
+        <h4>نظام العمل الإداري</h4>
+        <ul>
+          <li>سياسة تعريف العمل الإداري</li>
+          <li>شروط ومعايير عضوية إدارة يعرب</li>
+          <li>سياسة الفريق المركزي</li>
+          <li>سياسة الهيكل الإداري</li>
+          <li>سياسة الهيكل التنظيمي</li>
+          <li>سياسة توزيع المناصب</li>
+          <li>سياسة التخطيط</li>
+          <li>سياسة التواصل الشامل</li>
+          <li>سياسة الحماية والإنقاذ والمخاطر</li>
+          <li>سياسة تخريج السياسات</li>
+        </ul>
+      </div>
+
+      <div class="pol-col">
+        <h4>نظام العمل البرامجي</h4>
+        <ul>
+          <li>باب المسميات والمفاهيم</li>
+          <li>باب آليات العمل البرامجي</li>
+          <li>باب الإرشاد الاجتماعي</li>
+          <li>باب التدريب</li>
+          <li>باب قسم الأنشطة</li>
+          <li>سياسة البيئة الآمنة</li>
+          <li>متطلبات تطبيق سياسة حماية الطفل في البيئة الآمنة</li>
+          <li>باب الفعاليات الكبرى</li>
+          <li>سياسة الفئات المستهدفة</li>
+          <li>باب نظام الحوافز</li>
+          <li>سياسة حماية الطفل</li>
+          <li>سياسة اختيار المستفيدين من البرامج</li>
+          <li>سياسة الحماية والنوع الاجتماعي</li>
+          <li>سياسة المتطوعين المساندين</li>
+          <li>سياسة إدارة الفريق</li>
+          <li>سياسة الاستقطاب</li>
+          <li>سياسة التسمية</li>
+          <li>سياسة عقوبة التقصير</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>جمعية يعرب للتنموية الخيرية — القوانين والأنظمة والسياسات</footer>
+
+<script>
+function openModal(){ document.getElementById('overlay').classList.add('open'); }
+function closeModal(){ document.getElementById('overlay').classList.remove('open'); }
+document.getElementById('overlay').addEventListener('click', e=>{
+  if(e.target.id==='overlay') closeModal();
+});
+</script>
+<script id="qa-js">
+(function(){
+  const dws = document.querySelectorAll('.dw'), panes = document.querySelectorAll('.ix-pane:not(.ix-res)'), res = document.querySelector('.ix-res'), q = document.getElementById('archQ');
+  const AR = '٠١٢٣٤٥٦٧٨٩', ar = s => String(s).replace(/\d/g, d => AR[d]);
+  function tab(k){ dws.forEach(d => d.classList.toggle('on', d.dataset.k === k)); panes.forEach(p => p.classList.toggle('on', p.dataset.k === k)); res.classList.remove('on'); }
+  dws.forEach(d => d.addEventListener('click', () => { q.value = ''; tab(d.dataset.k); }));
+  const norm = s => s.replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي');
+  q.addEventListener('input', () => {
+    const v = norm(q.value.trim());
+    if (!v){ tab(document.querySelector('.dw.on')?.dataset.k || '0'); return; }
+    panes.forEach(p => p.classList.remove('on'));
+    const out = [];
+    panes.forEach((p, k) => p.querySelectorAll('.ix-t').forEach(t => { if (norm(t.textContent).includes(v)) out.push(`<div class="ix" style="--j:${out.length}"><span class="ix-n">${ar(out.length + 1)}</span><span class="ix-t">${t.textContent}<small>${dws[k].querySelector('b').textContent}</small></span></div>`); }));
+    res.innerHTML = out.join('') || '<p style="grid-column:1/-1;text-align:center;color:var(--ink-soft)">ما في نتائج مطابقة</p>';
+    res.classList.add('on');
+  });
+})();
+</script>
+</body>
+</html>
